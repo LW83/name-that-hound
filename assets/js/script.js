@@ -1,1 +1,19 @@
-console.log("Name that Hound Here We Come!")
+function runGame() {
+
+}
+
+function generateOptions(){
+
+}
+
+function checkAnswer() {
+
+}
+
+function correctAnswer() {
+
+}
+
+function increaseScore() {
+
+}

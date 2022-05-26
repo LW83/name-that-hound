@@ -1,3 +1,14 @@
 body {
-    background-color: aquamarine;
+    background-image: url(/assets/images/AdobeStock_84556601.jpeg);
+}
+
+#game-container {
+    background-color: grey;
+}
+#quiz-photo {
+    background-color: darkgray;
+}
+
+#answer-options {
+    background-color: whitesmoke;
 }

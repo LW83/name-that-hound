@@ -1,14 +1,34 @@
+/* General styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
 body {
     background-image: url(/assets/images/AdobeStock_84556601.jpeg);
+    font-family: Poppins, sans-serif;
+    text-align: center;
 }
 
 #game-container {
-    background-color: grey;
+    background-color: #eae3d3;
+    width: 70vw;
+    height: 70vh;
+    margin: auto; 
 }
 #quiz-photo {
     background-color: darkgray;
+    width: 50%; 
+    margin: auto; 
+    border: 3px solid #eae3d3; 
 }
 
 #answer-options {
     background-color: whitesmoke;
+    width: 50%;
+    margin: auto;
 }

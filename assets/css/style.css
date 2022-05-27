@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url(/assets/images/AdobeStock_84556601.jpeg);
+    background-image: url(/assets/images/background.jpeg);
     font-family: Poppins, sans-serif;
     text-align: center;
 }
@@ -19,6 +19,7 @@ body {
     width: 70vw;
     height: 70vh;
     margin: auto; 
+    display: ;
 }
 #quiz-photo {
     background-color: darkgray;
@@ -31,4 +32,8 @@ body {
     background-color: whitesmoke;
     width: 50%;
     margin: auto;
+}
+
+#final-score {
+    display: none;
 }

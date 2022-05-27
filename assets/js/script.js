@@ -1,8 +1,17 @@
+let dogImages = [
+    { name: "Afghan Hound", image: "afghan-hound.jpeg" },
+    { name: "Airedale Terrier", image: "airedale-terrier.jpeg" } 
+];
+
 function runGame() {
 
 }
 
-function generateOptions(){
+function generatephoto() {
+
+}
+
+function generateOptions() {
 
 }
 

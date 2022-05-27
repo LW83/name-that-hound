@@ -15,10 +15,11 @@
     <header>
         <h1>Name That Hound</h1>
     </header>
+
     <section>
         <div id="welcome-container">Welcome to Name that Hound!
             <div id="rules">How to Play</div>
-            <button id="start-game">Play the Game</button>
+            <button id="start-game" data-type="game1" class="btn btn-play">Play the Game</button>
         </div>
         <div id="game-container">
             <div id="quiz-photo">
@@ -27,15 +28,14 @@
             <div id="answer-options">
                 answers
             </div>
-            <button>
-                Final Answer
-            </button>
+            <button id="submit-answer" data-type="submit" class="btn btn-submit">Final Answer</button>
             <div id="score-container">
                 <p>Current Score: <span id="score">0</span>/<span id="total-questions">0</span>
             </div>
-            <div id="final-score"></div>
         </div>
+        <div id="final-score"></div>
     </section>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>

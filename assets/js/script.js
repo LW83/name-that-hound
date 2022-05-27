@@ -1,35 +1,44 @@
 let buttons = document.getElementsByTagName("button");
-let photo = document.getElementById("quiz-photo");
 
+let photo = document.getElementById("dog-image");
 
+let dogs = [
+    { name: 'Afghan Hound', src : 'assets/images/dogs/afghan-hound.jpeg' },
+    { name: 'Airedale Terrier', src : 'assets/images/dogs/airedale-terrier.jpeg' } 
+];
 
 document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked Submit!");
-            } else {
-                let game = this.getAttribute("data-type");
-                alert(`You clicked ${generatePhoto}`);
+            if (this.getAttribute("data-type") === "easy") {
+               generatePhoto();
             }
         });
     }
 
+    generatePhoto("easy");
+
 });
 
-let dogImages = [
-    { name: "Afghan Hound", image: "afghan-hound.jpeg" },
-    { name: "Airedale Terrier", image: "airedale-terrier.jpeg" } 
-];
+function generatePhoto(dogPhoto, num) {
+        let dogPhoto = dogs.src;
+        let num = Math.floor(Math.random() * dogPhoto.length);
+        return dogPhoto[num];
+    }
 
-function generatePhoto() {
+function displayPhoto() {
+
+        photo.src = generatePhoto;
+    }
+
+/**function generatePhoto(game) {
     for (var i = 0; i < 10; i += 1) {
-        var dog = getRandomItem(dogImages);
+        var dog = getRandomItem(dogPhoto); 
         photo[i].innerHTML = dog.image;
     }
-}
+}**/
 
-function generateOptions() {
+function generateChoices() {
 
 }
 

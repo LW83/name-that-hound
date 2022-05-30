@@ -17,3 +17,4 @@ Resources:
 https://stackoverflow.com/questions/70983009/im-creating-a-quiz-with-5-random-questions-out-of-an-array-with-20-i-want-to
 
 https://www.w3schools.com/js/js_random.asp - creating a random number for use in image generation 
+https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested-objects-arrays-or-json

@@ -6,12 +6,17 @@ let dogs = {
       image : "/assets/images/dogs/boxer-dogs.jpeg" 
     }
 
-/**let dogs = [
-    { name: 'Afghan Hound', src : 'assets/images/dogs/afghan-hound.jpeg' },
-    { name: 'Airedale Terrier', src : 'assets/images/dogs/airedale-terrier.jpeg' } 
+//Function to wait until DOM content is loaded before executing 
+
+
+//Testing functions
+let dogsTest = [
+    { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg' },
+    { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg' }, 
+    { name : 'Samoyed', image : 'assets/images/dogs/samoyed.jpeg' }
 ];
 
-document.addEventListener("DOMContentLoaded", function() {
+/**document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "easy") {
@@ -25,27 +30,24 @@ document.addEventListener("DOMContentLoaded", function() {
 });**/
 
 
-function generatePhoto () {
+/** Undo this comment remove 
+ * function generatePhoto () {
     let dogPhoto = document.createElement('img');
-    dogPhoto.src = dogs.image;
-    return photo.innerHTML = `<img src="${dogs.image}">`;  
+    /**dogPhoto.src = dogs.image;**/
+    /**return photo.innerHTML = `<img src="${dogs.image}">`;  
 }
 
-generatePhoto ();
-  
+generatePhoto ();**/
 
-/** function generatePhoto(dogPhoto, num) {
-        let dogPhoto = dogs.src;
-        let num = Math.floor(Math.random() * dogPhoto.length);
-        return dogPhoto[num];
-    }
+function generatePhotoTest() {
+    let num = Math.floor(Math.random() * dogsTest.length);
+    let dogPhoto = dogsTest[num].image; 
+    return photo.innerHTML = `<img src="${(dogPhoto)}">`;
+}
 
-function displayPhoto() {
+generatePhotoTest();
 
-        photo.src = generatePhoto;
-    }
-
-function generatePhoto(game) {
+/** function generatePhoto(game) {
     for (var i = 0; i < 10; i += 1) {
         var dog = getRandomItem(dogPhoto); 
         photo[i].innerHTML = dog.image;

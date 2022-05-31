@@ -1,11 +1,12 @@
 //Declare variables
 const photo = document.getElementById("quiz-photo");
 let buttons = document.getElementsByTagName("button");
+const answers = document.getElementById("answer-options");
 
 //Function to wait until DOM content is loaded before executing 
 
 
-let dogsTest = [
+let dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg' },
     { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg' }, 
     { name : 'Akita', image: 'assets/images/dogs/akita.jpeg'},
@@ -94,17 +95,38 @@ let dogsTest = [
 
 });**/
 
-function generatePhotoTest() {
-    let num = Math.floor(Math.random() * dogsTest.length);
-    let dogPhoto = dogsTest[num].image; 
-    return photo.innerHTML = `<img src="${(dogPhoto)}">`;
+function generatePhotoAndAnswers() {
+    let num = Math.floor(Math.random() * dogs.length);
+    let dog = dogs[num];
+    let dogPhoto = dog.image; 
+    let dogName = dog.name;
+    let answerOptions = [dogName];
+    
+    function generatePhoto() {
+        return photo.innerHTML = `<img src="${(dogPhoto)}">`;
+    }
+    
+    function generateCorrectAnswer () { //can probably remove once array shuffled and pushed to DOM
+        return answers.innerHTML = `<p>"${(dogName)}"</p>`;
+    } 
+
+    generatePhoto()
+    generateCorrectAnswer()
+
+    function generateAnswerOptions () {
+        let newNum = Math.floor(Math.random() * dogs.length);
+        let addDogs = dogs[newNum];
+        let addDogName = addDogs.name;
+
+        answerOptions.push(addDogName);
+    } 
+
+    for (var i = 0; i < 3; i++) {
+        generateAnswerOptions ();
+    }
 }
 
-generatePhotoTest();
-
-function generateChoices() {
-
-}
+generatePhotoAndAnswers();
 
 function checkAnswer() {
 

@@ -100,33 +100,33 @@ function generatePhotoAndAnswers() {
     let dog = dogs[num];
     let dogPhoto = dog.image; 
     let dogName = dog.name;
-    let answerOptions = [dogName];
-    
+
     function generatePhoto() {
         return photo.innerHTML = `<img src="${(dogPhoto)}">`;
     }
     
     function generateCorrectAnswer () { //can probably remove once array shuffled and pushed to DOM
-        return answers.innerHTML = `<p>"${(dogName)}"</p>`;
+        return answers.innerHTML = `<p>${(dogName)}</p>`;
     } 
 
     generatePhoto()
     generateCorrectAnswer()
-
+    
     function generateAnswerOptions () {
         let newNum = Math.floor(Math.random() * dogs.length);
         let addDogs = dogs[newNum];
         let addDogName = addDogs.name;
-
+        let answerOptions = [];
+    
         answerOptions.push(addDogName);
     } 
-
+    
     for (var i = 0; i < 3; i++) {
         generateAnswerOptions ();
     }
 }
 
-generatePhotoAndAnswers();
+generatePhotoAndAnswers()
 
 function checkAnswer() {
 

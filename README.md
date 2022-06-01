@@ -9,7 +9,8 @@ Boxer: DogTime.com
 
 Bugs: 
 1) Bringing in images: Challenges; files paths, bringing into DOM (typos in template literals)
-2) 
+2) Generating random answers and pushing into an array
+3) Lining up answers with radio buttons - put in a break after each line changed line from [i] to answerOptions[i] (brought in name of dog as opposed to a number) - was pushing radio options in with string of all options. pushed to new array and (final options) and pulled that into the DOM
 
 
 
@@ -21,3 +22,4 @@ https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested
 https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
 https://stackoverflow.com/questions/44008092/how-to-call-a-function-multiple-times
 https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+https://www.sitepoint.com/simple-javascript-quiz/ to push answeroptions to mc radio buttons

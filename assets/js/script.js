@@ -1,11 +1,15 @@
 //Declare variables
+const game = document.getElementById("game-container");
 const photo = document.getElementById("quiz-photo");
-let buttons = document.getElementsByTagName("button");
 const answers = document.getElementById("answer-options");
-
-//Function to wait until DOM content is loaded before executing 
-
-
+const submitButton = document.getElementById("submit-answer");
+let correctScore = document.getElementById("score");
+let total = document.getElementById("total-questions");
+const welcome = document.getElementById("welcome-container");
+const rules = document.getElementById("rules");
+const startButton = document.getElementById("start-game");
+const finalScorePage = document.getElementById("score-container");
+let finalScore = document.getElementById("final-score");
 let dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg' },
     { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg' }, 
@@ -82,6 +86,8 @@ let dogs = [
     { name : 'Yorkshire Terrier', image : 'assets/images/dogs/yorkshire-terrier.webp' }
 ];
 
+//Function to wait until DOM content is loaded before executing 
+
 /**document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -105,8 +111,8 @@ function generatePhotoAndAnswers() {
         return photo.innerHTML = `<img src="${(dogPhoto)}">`;
     }
     
-    function generateCorrectAnswer () { //can probably remove once array shuffled and pushed to DOM
-        return answers.innerHTML = `<p>${(dogName)}</p>`;
+    function generateCorrectAnswer () { 
+        return dogName;
     } 
 
     generatePhoto()
@@ -149,7 +155,17 @@ function generatePhotoAndAnswers() {
       }
       
       shuffle(answerOptions);
-      console.log(answerOptions);
+      
+      let finalAnswerOptions = [];
+      for (i in answerOptions){ 
+        finalAnswerOptions.push(
+          `<label>
+            <input  type="radio" name="possibleAnswers">
+            ${answerOptions[i]} <br>
+          </label>`
+        );
+      }
+      answers.innerHTML = finalAnswerOptions.join('');
 }
 
 generatePhotoAndAnswers()

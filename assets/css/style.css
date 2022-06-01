@@ -14,13 +14,11 @@ body {
     text-align: center;
 }
 
-/** #welcome-container {
-    background-color: #eae3d3;
-    width: 70vw;
-    height: 80vh;
+#welcome-container {
+    background-color: beige;
+    height: 10vh;
     margin: auto; 
-    display: hide;
-}**/
+}
 
 #game-container {
     background-color: #eae3d3;
@@ -47,7 +45,7 @@ body {
 #answer-options {
     background-color: whitesmoke;
     width: 50%;
-    height: 15vh; 
+    height: 10vh; 
     margin: auto;
     border-radius: 20px;
 }

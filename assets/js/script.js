@@ -3,8 +3,8 @@ const game = document.getElementById("game-container");
 const photo = document.getElementById("quiz-photo");
 const answers = document.getElementById("answer-options");
 const submitButton = document.getElementById("submit-answer");
-let correctScore = document.getElementById("score");
-let total = document.getElementById("total-questions");
+let correctScore = (document.getElementById("score").innerText);
+let total = (document.getElementById("total-questions").innerText);
 const welcome = document.getElementById("welcome-container");
 const rules = document.getElementById("rules");
 const startButton = document.getElementById("start-game");
@@ -88,35 +88,18 @@ let dogs = [
 
 //Function to wait until DOM content is loaded before executing 
 
-/**document.addEventListener("DOMContentLoaded", function() {
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "easy") {
-               generatePhoto();
-            }
-        });
-    }
-
-    generatePhoto("easy");
-
-});**/
-
-function generatePhotoAndAnswers() {
+//Function to generate game
+function generateGame() {
     let num = Math.floor(Math.random() * dogs.length);
     let dog = dogs[num];
     let dogPhoto = dog.image; 
-    let dogName = dog.name;
+    dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function from codegrepper.com (https://www.codegrepper.com/code-examples/javascript/how+to+access+variable+outside+function+in+javascript)
 
     function generatePhoto() {
         return photo.innerHTML = `<img src="${(dogPhoto)}">`;
     }
     
-    function generateCorrectAnswer () { 
-        return dogName;
-    } 
-
     generatePhoto()
-    generateCorrectAnswer()
     
     let answerOptions = [];
     function generateAnswerOptions () {
@@ -152,9 +135,9 @@ function generatePhotoAndAnswers() {
         }
       
         return array;
-      }
+    }
       
-      shuffle(answerOptions);
+    shuffle(answerOptions);
       
       let finalAnswerOptions = [];
       for (i in answerOptions){ 
@@ -166,18 +149,29 @@ function generatePhotoAndAnswers() {
         );
       }
       answers.innerHTML = finalAnswerOptions.join('');
+    
 }
 
-generatePhotoAndAnswers()
+/**
+ * Function to check if the user answer is correct, increase score for correct answer, increase total questions and provide feedback on answer provided
+ */
+function checkAnswer(){
+    let userAnswer = (document.querySelector('input[name="possibleAnswers"]:checked').value);
+    let correctAnswer = dogName;
 
-function checkAnswer() {
-
+    if (userAnswer === correctAnswer) {
+        alert("Correct!");//test alert to see if working
+    } else {
+        alert("Nope!");
+    }
 }
 
-function correctAnswer() {
+//Event Listeners
 
-}
+submitButton.addEventListener("click", function() {
+    checkAnswer();
+});
 
-function increaseScore() {
-
-}
+startButton.addEventListener("click", function() {
+    generateGame();
+});

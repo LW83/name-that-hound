@@ -35,7 +35,7 @@ let dogs = [
     { name : 'Dalmatian', image: 'assets/images/dogs/dalmatian.webp'},
     { name : 'Doberman Pinscher', image: 'assets/images/dogs/doberman-pinscher.jpeg'},
     { name : 'English Cocker Spaniel', image: 'assets/images/dogs/english-cocker-spaniel.jpeg'},
-    { name : 'English Setter', image: 'assets/images/dogs/english-setter.jpeg'},
+    { name : 'English Setter', image: 'assets/images/dogs/english-setter.webp'},
     { name : 'English Springer Spaniel', image: 'assets/images/dogs/english-springer-spaniel.webp'},
     { name : 'Fox Terrier', image: 'assets/images/dogs/fox-terrier.webp'},
     { name : 'French Bulldog', image: 'assets/images/dogs/french-bulldog.webp'},
@@ -112,18 +112,44 @@ function generatePhotoAndAnswers() {
     generatePhoto()
     generateCorrectAnswer()
     
+    let answerOptions = [];
     function generateAnswerOptions () {
         let newNum = Math.floor(Math.random() * dogs.length);
         let addDogs = dogs[newNum];
-        let addDogName = addDogs.name;
-        let answerOptions = [];
-    
-        answerOptions.push(addDogName);
-    } 
-    
-    for (var i = 0; i < 3; i++) {
-        generateAnswerOptions ();
+            return addDogs.name;
     }
+        
+    for (var i = 0; i < 3; i++) {
+            generateAnswerOptions ();
+            answerOptions.push(generateAnswerOptions());
+        } 
+    
+    answerOptions.push(dogName);
+
+/**
+ * Function to shuffle array to ensure correct answer placement is not identifiable. This code was taken from Stack Overflow as noted in ReadMe.  
+ */
+
+    function shuffle(array) { 
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+      }
+      
+      shuffle(answerOptions);
+      console.log(answerOptions);
 }
 
 generatePhotoAndAnswers()

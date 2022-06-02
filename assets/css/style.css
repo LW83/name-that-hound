@@ -16,36 +16,28 @@ body {
 
 #welcome-container {
     background-color: beige;
+    max-width:700px;
     height: 10vh;
     margin: auto; 
 }
 
 #game-container {
     background-color: #eae3d3;
-    width: 70vw;
-    height: 80vh;
+    max-width: 700px;
     margin: auto; 
     /*display: ;*/
 }
 #quiz-photo {
     background-color: darkgray;
-    width: 50%; 
-    height: 60vh; 
+    max-width: 600px; 
     margin: auto; 
     border: 3px solid #eae3d3; 
     border-radius: 20px;
 }
 
-#quiz-photo img {
-    height: 95%;
-    width: 95%;
-    object-fit: cover;
-}
-
 #answer-options {
     background-color: whitesmoke;
-    width: 50%;
-    height: 10vh; 
+    width: 80%;
     margin: auto;
     border-radius: 20px;
 }
@@ -62,4 +54,18 @@ button {
     height: 60px; 
     border: 2px solid #eae3d3;
     border-radius: 10px;
+}
+
+#answer-feedback {
+    height: 50px;
+    background-color: grey;
+}
+
+.dogPhoto {
+    width: 90%;
+    height: auto;
+}
+
+.header-image {
+    line-height: 20px;
 }

@@ -97,7 +97,7 @@ function generateGame() {
     dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function from codegrepper.com (https://www.codegrepper.com/code-examples/javascript/how+to+access+variable+outside+function+in+javascript)
 
     function generatePhoto() {
-        return photo.innerHTML = `<img src="${(dogPhoto)}">`;
+        return photo.innerHTML = `<img src="${(dogPhoto)}" class="dogPhoto">`;
     }
     
     generatePhoto()
@@ -162,8 +162,8 @@ function checkAnswer(){
     if (userAnswer === dogName) {
         document.getElementById("score").innerText = ++score; //using code from Love Maths
         document.getElementById("total-questions").innerText = ++total; 
-        style 
-    } else {
+        document.querySelector('input[name="possibleAnswers"]:checked').classList.add('correct');
+        } else {
         document.getElementById("total-questions").innerText = ++total;
     }
 }

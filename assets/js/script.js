@@ -10,6 +10,7 @@ const rules = document.getElementById("rules");
 const startButton = document.getElementById("start-game");
 const finalScorePage = document.getElementById("score-container");
 let finalScore = document.getElementById("final-score");
+let playAgainButton = document.getElementById("play-again");
 let dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg' },
     { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg' }, 
@@ -175,5 +176,9 @@ submitButton.addEventListener("click", function() {
 });
 
 startButton.addEventListener("click", function() {
+    generateGame();
+});
+
+playAgainButton.addEventListener("click", function() {
     generateGame();
 });

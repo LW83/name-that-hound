@@ -14,58 +14,140 @@ body {
     text-align: center;
 }
 
-#welcome-container {
-    background-color: beige;
-    max-width:700px;
-    height: 10vh;
-    margin: auto; 
-}
-
-#game-container {
-    background-color: #eae3d3;
-    max-width: 700px;
-    margin: auto; 
-    /*display: ;*/
-}
-#quiz-photo {
-    background-color: darkgray;
-    max-width: 600px; 
-    margin: auto; 
-    border: 3px solid #eae3d3; 
-    border-radius: 20px;
-}
-
-#answer-options {
-    background-color: whitesmoke;
-    width: 80%;
-    margin: auto;
-    border-radius: 20px;
-}
-
-#final-score {
-    display: none;
-}
-
 button {
     background-color: #a49f94;
     color: whitesmoke;
     font-size: medium;
     width: 120px;
     height: 60px; 
-    border: 2px solid #eae3d3;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-#answer-feedback {
-    height: 50px;
-    background-color: grey;
+button:hover {
+    background-color: #eae3d3;
+    border: 2px solid #a49f94;
+    color: #a49f94;
+}
+
+/* Styling for welcome container including how to play and play game button */
+#welcome-container {
+    background-color: #f3f3f3;
+    max-width:700px;
+    margin: auto; 
+    border: 3px solid #a49f94;
+    border-radius: 20px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#welcome-container h2, h3 {
+    padding: 3px;
+}
+
+#welcome-container p {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#welcome-container ul {
+    padding-left: 40px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+#play-span {
+    background-color: #a49f94;
+    color: whitesmoke;
+    border-radius: 3px;
+    padding: 1px;
+}
+
+.btn-play, .btn-submit {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    outline: none;
+}
+
+/* Styling for game container including image, answer options, submit button, feedback and score */
+
+#game-container {
+    background-color: #eae3d3;
+    max-width: 700px;
+    margin: auto; 
+    border-radius: 20px;
+    /*display: ;*/
+}
+
+#quiz-photo {
+    max-width: 600px; 
+    margin: auto; 
 }
 
 .dogPhoto {
     width: 90%;
     height: auto;
+    border: 3px solid #a49f94;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.header-image {
-    line-height: 20px;
+#answer-options {
+    background-color: whitesmoke;
+    width: 75%;
+    margin: auto;
+    border-radius: 20px;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#answer-feedback {
+    height: 50px;
+    background-color: grey;
+    font-size: large;
+    color: darkgrey;
+    border-radius: 20px; 
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+
+#score-container {
+    padding-bottom: 10px;
+}
+
+#exit-game {
+    padding-bottom: 10px;
+    color: #a49f94;
+    font-size: x-large;
+}
+
+/* Styling for game container including image, answer options, submit button, feedback and score */
+#final-score {
+    background-color: #f3f3f3;
+    max-width:700px;
+    margin: auto; 
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#certificate {
+    background: url(../images/certificate-border.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-right: 10px;
+    height: 500px;
+}
+
+#certificate-text {
+    display: inline-block;  
+    margin-top: 25%;
+}
+
+.btn-play, .btn-home {
+    display: inline-block;
+    clear: both;
 }

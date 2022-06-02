@@ -1,6 +1,7 @@
 https://imagecolorpicker.com/en - select colors
 adobe stock image - background image
-
+https://www.istockphoto.com/search/2/image?mediatype=illustration&phrase=dog+borders - certificate border
+https://imgflip.com/tag/winking+dog - winking dog image
 
 Boxer: DogTime.com
 

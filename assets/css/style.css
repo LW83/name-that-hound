@@ -106,9 +106,8 @@ button:hover {
 
 #answer-feedback {
     height: 50px;
-    background-color: grey;
     font-size: large;
-    color: darkgrey;
+    color: grey;
     border-radius: 20px; 
     width: 70%;
     text-align: center;

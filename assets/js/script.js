@@ -11,6 +11,7 @@ const startButton = document.getElementById("start-game");
 const finalScorePage = document.getElementById("score-container");
 let finalScore = document.getElementById("final-score");
 let playAgainButton = document.getElementById("play-again");
+let answerFeedback = document.getElementById("answer-feedback");
 let dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg' },
     { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg' }, 
@@ -163,9 +164,12 @@ function checkAnswer(){
     if (userAnswer === dogName) {
         document.getElementById("score").innerText = ++score; //using code from Love Maths
         document.getElementById("total-questions").innerText = ++total; 
-        document.querySelector('input[name="possibleAnswers"]:checked').classList.add('correct');
+        answerFeedback.innerHTML = "<p><i class='fa-solid fa-paw'></i> Congratulations that's the right hound!</p>";
+        answerFeedback.style.color = 'green';
         } else {
         document.getElementById("total-questions").innerText = ++total;
+        answerFeedback.innerHTML = `<p><i class='fa-solid fa-heart-crack'></i> Hard luck! The correct answer was ${dogName} </p>`;
+        answerFeedback.style.color = 'darkred';
     }
 }
 

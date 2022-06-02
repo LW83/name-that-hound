@@ -3,8 +3,8 @@ const game = document.getElementById("game-container");
 const photo = document.getElementById("quiz-photo");
 const answers = document.getElementById("answer-options");
 const submitButton = document.getElementById("submit-answer");
-let correctScore = (document.getElementById("score").innerText);
-let total = (document.getElementById("total-questions").innerText);
+let score = parseInt(document.getElementById("score").innerText);
+let total = parseInt(document.getElementById("total-questions").innerText);
 const welcome = document.getElementById("welcome-container");
 const rules = document.getElementById("rules");
 const startButton = document.getElementById("start-game");
@@ -86,6 +86,7 @@ let dogs = [
     { name : 'Yorkshire Terrier', image : 'assets/images/dogs/yorkshire-terrier.webp' }
 ];
 
+
 //Function to wait until DOM content is loaded before executing 
 
 //Function to generate game
@@ -143,7 +144,7 @@ function generateGame() {
       for (i in answerOptions){ 
         finalAnswerOptions.push(
           `<label>
-            <input  type="radio" name="possibleAnswers">
+            <input  type="radio" name="possibleAnswers" value="${answerOptions[i]}">
             ${answerOptions[i]} <br>
           </label>`
         );
@@ -155,14 +156,15 @@ function generateGame() {
 /**
  * Function to check if the user answer is correct, increase score for correct answer, increase total questions and provide feedback on answer provided
  */
-function checkAnswer(){
-    let userAnswer = (document.querySelector('input[name="possibleAnswers"]:checked').value);
-    let correctAnswer = dogName;
 
-    if (userAnswer === correctAnswer) {
-        alert("Correct!");//test alert to see if working
+function checkAnswer(){
+    let userAnswer = document.querySelector('input[name="possibleAnswers"]:checked').value;
+    if (userAnswer === dogName) {
+        document.getElementById("score").innerText = ++score; //using code from Love Maths
+        document.getElementById("total-questions").innerText = ++total; 
+        style 
     } else {
-        alert("Nope!");
+        document.getElementById("total-questions").innerText = ++total;
     }
 }
 

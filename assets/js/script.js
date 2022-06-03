@@ -3,15 +3,14 @@ const game = document.getElementById("game-container");
 const photo = document.getElementById("quiz-photo");
 const answers = document.getElementById("answer-options");
 const submitButton = document.getElementById("submit-answer");
-let score = parseInt(document.getElementById("score").innerText);
-let total = parseInt(document.getElementById("total-questions").innerText);
 const welcome = document.getElementById("welcome-container");
 const rules = document.getElementById("rules");
 const startButton = document.getElementById("start-game");
-const finalScorePage = document.getElementById("score-container");
+const finalTotal = document.getElementById("final-total");
+const scoreContainer = document.getElementById("score-container");
 let finalScore = document.getElementById("final-score");
-let playAgainButton = document.getElementById("play-again");
-let answerFeedback = document.getElementById("answer-feedback");
+const playAgainButton = document.getElementById("play-again");
+const answerFeedback = document.getElementById("answer-feedback");
 let dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg' },
     { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg' }, 
@@ -48,7 +47,7 @@ let dogs = [
     { name : 'German Pointer', image: 'assets/images/dogs/german-pointer.jpeg'},
     { name : 'German Shepherd', image: 'assets/images/dogs/german-shepherd.webp'},
     { name : 'Golden Retriever', image: 'assets/images/dogs/golden-retriever.jpeg'},
-    { name : 'Gordon Setter', image: 'assets/images/dogs/gordon-setter.webp'},
+    { name : 'Gordon Setter', image: 'assets/images/dogs/gordon-setter.jpeg'},
     { name : 'Great Dane', image: 'assets/images/dogs/great-dane.webp'},
     { name : 'Greyhound', image: 'assets/images/dogs/greyhound.jpeg'},
     { name : 'Hungarian Vizla', image: 'assets/images/dogs/hungarian-vizla.webp'},
@@ -87,9 +86,43 @@ let dogs = [
     { name : 'Whippet', image: 'assets/images/dogs/whippet.jpeg'},
     { name : 'Yorkshire Terrier', image : 'assets/images/dogs/yorkshire-terrier.webp' }
 ];
+let playerName = document.getElementById("name").innerText;
+const nextQuestion = document.getElementById("next-question");
+const exit = document.getElementById("exit-game");
+let score = 0;
+let total = 0;
 
 
 //Function to wait until DOM content is loaded before executing 
+
+//Event Listeners
+
+submitButton.addEventListener("click", function() {
+    checkAnswer();
+    answerFeedback.style.display = "block";
+    nextQuestion.style.display = "inline-block";
+});
+
+startButton.addEventListener("click", function() {
+    generateGame();
+    game.style.display = "block";
+    welcome.style.display = "none";
+});
+
+nextQuestion.addEventListener("click", function() {
+    generateGame();
+    answerFeedback.style.display = "none";
+});
+
+exit.addEventListener("click", function() {
+    resetScore();
+    welcome.style.display = "block";
+    game.style.display = "none";
+});
+
+playAgainButton.addEventListener("click", function() {
+    generateGame();
+});
 
 //Function to generate game
 function generateGame() {
@@ -152,37 +185,49 @@ function generateGame() {
         );
       }
       answers.innerHTML = finalAnswerOptions.join('');
-    
+
+      nextQuestion.style.display = "none";    
+}
+
+scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
+
+function resetScore(){
+    score = 0; 
+    total = 0; 
+    scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
 }
 
 /**
  * Function to check if the user answer is correct, increase score for correct answer, increase total questions and provide feedback on answer provided
  */
-
 function checkAnswer(){
     let userAnswer = document.querySelector('input[name="possibleAnswers"]:checked').value;
     if (userAnswer === dogName) {
-        document.getElementById("score").innerText = ++score; //using code from Love Maths
-        document.getElementById("total-questions").innerText = ++total; 
+        ++score;
+        ++total;
+        scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
         answerFeedback.innerHTML = "<p><i class='fa-solid fa-paw'></i> Congratulations that's the right hound!</p>";
         answerFeedback.style.color = 'green';
         } else {
-        document.getElementById("total-questions").innerText = ++total;
-        answerFeedback.innerHTML = `<p><i class='fa-solid fa-heart-crack'></i> Hard luck! The correct answer was ${dogName} </p>`;
-        answerFeedback.style.color = 'darkred';
+            ++total;
+            scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
+            answerFeedback.innerHTML = `<p><i class='fa-solid fa-heart-crack'></i> Hard luck! The correct answer was ${dogName} </p>`;
+            answerFeedback.style.color = 'darkred';
+        }
+}
+
+function finalScoreTotal(){
+    if (total === '3');
+        nextQuestion.style.display = "none";
+}
+
+function finalScoreTotal(){
+    if (total === 4) {
+        finalTotal.style.display = "inline-block";
+        nextQuestion.style.display = "none";
+    } else {
+        console.log(total);
     }
 }
 
-//Event Listeners
 
-submitButton.addEventListener("click", function() {
-    checkAnswer();
-});
-
-startButton.addEventListener("click", function() {
-    generateGame();
-});
-
-playAgainButton.addEventListener("click", function() {
-    generateGame();
-});

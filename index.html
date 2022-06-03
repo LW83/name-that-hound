@@ -40,6 +40,8 @@
                 </ul>
             </div>
             <br>
+            <label for="name">Enter your Name:</label>
+            <input class="text-input" id="name" name="name" type="text" required>
             <p>We hope you enjoy the game!</p>
             <button id="start-game" data-type="easy" class="btn btn-play">Play the Game</button>
         </div>
@@ -49,10 +51,12 @@
             <div id="answer-options"></div>
             <div id="answer-feedback"></div>
             <button id="submit-answer" data-type="submit" class="btn btn-submit">Submit</button>
+            <button id="next-question" data-type="next" class="btn btn-next">Next Question</button>
+            <button id="final-total" data-type="final" class="btn btn-final">Final Score</button>
             <div id="score-container">
-                <p>Current Score: <span id="score">0</span>/<span id="total-questions">0</span>
+                <!--<p>Current Score: <span id="score">0</span>/<span id="total-questions">0</span>-->
             </div>
-            <div id="exit-game"><i class="fa-solid fa-door-open"></i></div>
+            <div><button id="exit-game" class="exit"><i class="fa-solid fa-door-open"></i></div>
         </div>
 <!-- -->
         <div id="final-score">

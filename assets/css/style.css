@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-button {
+.btn {
     background-color: #a49f94;
     color: whitesmoke;
     font-size: medium;
@@ -24,7 +24,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
     background-color: #eae3d3;
     border: 2px solid #a49f94;
     color: #a49f94;
@@ -56,6 +56,14 @@ button:hover {
     text-align: left;
 }
 
+#name {
+    width: 200px;
+    height: 25px;
+    border-radius: 8px;
+    outline-color: #a49f94;
+    margin-bottom: 10px;
+}
+
 #play-span {
     background-color: #a49f94;
     color: whitesmoke;
@@ -77,7 +85,7 @@ button:hover {
     max-width: 700px;
     margin: auto; 
     border-radius: 20px;
-    /*display: ;*/
+    display: none;
 }
 
 #quiz-photo {
@@ -105,11 +113,10 @@ button:hover {
 }
 
 #answer-feedback {
-    height: 50px;
-    font-size: large;
+    font-size: medium;
     color: grey;
     border-radius: 20px; 
-    width: 70%;
+    width: 90%;
     text-align: center;
     margin: auto;
 }
@@ -118,10 +125,21 @@ button:hover {
     padding-bottom: 10px;
 }
 
+.btn-next, .btn-final {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+    display: none;
+}
+
+/**final button - mke it a darker colour**/
+
 #exit-game {
     padding-bottom: 10px;
     color: #a49f94;
     font-size: x-large;
+    cursor: pointer;
+    background-color: transparent;
 }
 
 /* Styling for game container including image, answer options, submit button, feedback and score */
@@ -131,6 +149,7 @@ button:hover {
     margin: auto; 
     padding-left: 3px;
     padding-right: 3px;
+    display: none;
 }
 
 #certificate {

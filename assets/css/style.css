@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url(/assets/images/background.jpeg);
+    background-image: url(assets/images/background.jpeg);
     font-family: Poppins, sans-serif;
     text-align: center;
 }

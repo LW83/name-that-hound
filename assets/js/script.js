@@ -8,8 +8,9 @@ const rules = document.getElementById("rules");
 const startButton = document.getElementById("start-game");
 const finalTotal = document.getElementById("final-total");
 const scoreContainer = document.getElementById("score-container");
-let finalScore = document.getElementById("final-score");
+let finalContainer = document.getElementById("final-score");
 const playAgainButton = document.getElementById("play-again");
+const homeButton = document.getElementById("return-home");
 const answerFeedback = document.getElementById("answer-feedback");
 let dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg' },
@@ -86,11 +87,12 @@ let dogs = [
     { name : 'Whippet', image: 'assets/images/dogs/whippet.jpeg'},
     { name : 'Yorkshire Terrier', image : 'assets/images/dogs/yorkshire-terrier.webp' }
 ];
-let playerName = document.getElementById("name").innerText;
+let playerName = document.getElementById("name");
 const nextQuestion = document.getElementById("next-question");
 const exit = document.getElementById("exit-game");
 let score = 0;
 let total = 0;
+let certificateText = document.getElementById("certificate-text");
 
 
 //Function to wait until DOM content is loaded before executing 
@@ -99,6 +101,7 @@ let total = 0;
 
 submitButton.addEventListener("click", function() {
     checkAnswer();
+    finalScoreTotal();
     answerFeedback.style.display = "block";
     nextQuestion.style.display = "inline-block";
 });
@@ -120,9 +123,25 @@ exit.addEventListener("click", function() {
     game.style.display = "none";
 });
 
+finalTotal.addEventListener("click", function() {
+    certificateGeneration();
+    finalContainer.style.display = "block";
+    game.style.display = "none";
+});
+
 playAgainButton.addEventListener("click", function() {
     generateGame();
+    finalContainer.style.display = "none";
+    game.style.display = "block";
 });
+
+homeButton.addEventListener("click", function() {
+    resetScore();
+    welcome.style.display = "block";
+    game.style.display = "none";
+    finalContainer.style.display = "none";
+});
+
 
 //Function to generate game
 function generateGame() {
@@ -215,19 +234,35 @@ function checkAnswer(){
             answerFeedback.style.color = 'darkred';
         }
 }
-
+//ERROR - Still showing the next question button
 function finalScoreTotal(){
-    if (total === '3');
-        nextQuestion.style.display = "none";
-}
-
-function finalScoreTotal(){
-    if (total === 4) {
+    if (total === 10) {
         finalTotal.style.display = "inline-block";
         nextQuestion.style.display = "none";
-    } else {
-        console.log(total);
+        submitButton.style.display = "none";
     }
 }
 
+function certificateGeneration(){
+    if (score < 4) {
+        certificateText.innerHTML = 
+        `<h3>Better Luck Next Time</h3>
+        <p>You scored ${score} out of 10</p>
+        <br>
+        <p>Your hound knowledge needs some Pawfecting, ${playerName.value}, but Milo here thinks you are up to the challenge!</p>`
+    } else if (score < 7) {
+        certificateText.innerHTML = 
+        `<h3>Pawsitive!</h3>
+        <p>You scored ${score} out of 10</p>
+        <br>
+        <p>Your know your hounds, ${playerName.value}, and Milo reckons with a bit of practice you could be Pawfect!</p>`
+    } else {
+        certificateText.innerHTML = 
+        `<h3>Pawfection!</h3>
+        <p>You scored ${score} out of 10</p>
+        <br>
+        <p>${playerName.value}, you are the ultimate expert of hounds!</p>`
+    }
+
+}
 

@@ -102,9 +102,9 @@ let certificateText = document.getElementById("certificate-text");
 submitButton.addEventListener("click", function() {
     checkAnswer();
     finalScoreTotal();
-    noMoreQuestions();
     answerFeedback.style.display = "block";
     nextQuestion.style.display = "inline-block";
+    noMoreQuestions();
 });
 
 startButton.addEventListener("click", function() {
@@ -112,6 +112,8 @@ startButton.addEventListener("click", function() {
     resetScore();
     game.style.display = "block";
     welcome.style.display = "none";
+    finalTotal.style.display = "none";
+    submitButton.style.display = "inline-block";
 });
 
 nextQuestion.addEventListener("click", function() {

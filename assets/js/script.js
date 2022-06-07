@@ -102,12 +102,14 @@ let certificateText = document.getElementById("certificate-text");
 submitButton.addEventListener("click", function() {
     checkAnswer();
     finalScoreTotal();
+    noMoreQuestions();
     answerFeedback.style.display = "block";
     nextQuestion.style.display = "inline-block";
 });
 
 startButton.addEventListener("click", function() {
     generateGame();
+    resetScore();
     game.style.display = "block";
     welcome.style.display = "none";
 });
@@ -130,9 +132,13 @@ finalTotal.addEventListener("click", function() {
 });
 
 playAgainButton.addEventListener("click", function() {
+    resetScore();
+    answerFeedback.style.display = "none";
     generateGame();
     finalContainer.style.display = "none";
     game.style.display = "block";
+    finalTotal.style.display = "none";
+    submitButton.style.display = "inline-block";
 });
 
 homeButton.addEventListener("click", function() {
@@ -140,6 +146,7 @@ homeButton.addEventListener("click", function() {
     welcome.style.display = "block";
     game.style.display = "none";
     finalContainer.style.display = "none";
+    playerName.value = "";
 });
 
 
@@ -214,6 +221,7 @@ function resetScore(){
     score = 0; 
     total = 0; 
     scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
+    answerFeedback.style.display = "none";
 }
 
 /**
@@ -236,12 +244,18 @@ function checkAnswer(){
 }
 //ERROR - Still showing the next question button
 function finalScoreTotal(){
-    if (total === 10) {
+    if (total > 9) {
         finalTotal.style.display = "inline-block";
-        nextQuestion.style.display = "none";
         submitButton.style.display = "none";
     }
 }
+
+function noMoreQuestions(){
+    if (total > 8) {
+        nextQuestion.style.display = "none";
+    }
+}
+
 
 function certificateGeneration(){
     if (score < 4) {

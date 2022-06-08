@@ -163,7 +163,7 @@ function generateGame() {
     dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function from codegrepper.com
     
     function generatePhoto() {
-        return photo.innerHTML = `<img src="${(dogPhoto)}" class="dogPhoto">`;
+        return photo.innerHTML = `<img src="${(dogPhoto)}" class="dogPhoto" alt ="${dog.description}">`;
     }
     
     generatePhoto()

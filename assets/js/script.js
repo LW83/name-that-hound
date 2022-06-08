@@ -93,7 +93,7 @@ const exit = document.getElementById("exit-game");
 let score = 0;
 let total = 0;
 let certificateText = document.getElementById("certificate-text");
-const numbers = Array(dogs.length).fill().map((_, index) => index + 1);//New from StackOverflow to create an array of numbers to generate unique numbers for pulling photo and answer options
+const numbers = Array(dogs.length).fill().map((_, index) => index);//New from StackOverflow to create an array of numbers to generate unique numbers for pulling photo and answer options
 
 //Function to wait until DOM content is loaded before executing 
 

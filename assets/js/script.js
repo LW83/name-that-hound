@@ -1,17 +1,20 @@
 //Declare variables
+const welcome = document.getElementById("welcome-container");
+let playerName = document.getElementById("name");
+const startButton = document.getElementById("start-game");
 const game = document.getElementById("game-container");
 const photo = document.getElementById("quiz-photo");
 const answers = document.getElementById("answer-options");
+const answerFeedback = document.getElementById("answer-feedback");
 const submitButton = document.getElementById("submit-answer");
-const welcome = document.getElementById("welcome-container");
-const rules = document.getElementById("rules");
-const startButton = document.getElementById("start-game");
+const nextQuestion = document.getElementById("next-question");
 const finalTotal = document.getElementById("final-total");
 const scoreContainer = document.getElementById("score-container");
+const exit = document.getElementById("exit-game");
 let finalContainer = document.getElementById("final-score");
+let certificateText = document.getElementById("certificate-text");
 const playAgainButton = document.getElementById("play-again");
 const homeButton = document.getElementById("return-home");
-const answerFeedback = document.getElementById("answer-feedback");
 let dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg', description: 'large long haired slim build breed black and beige color'},
     { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg', description: 'medium wire haired breed black and tan color'}, 
@@ -88,12 +91,8 @@ let dogs = [
     { name : 'Whippet', image: 'assets/images/dogs/whippet.jpeg', description: 'small slender breed short coat tan and white colour long snout'},
     { name : 'Yorkshire Terrier', image : 'assets/images/dogs/yorkshire-terrier.webp', description: 'small toy breed long coat tan and black colour' }
 ];
-let playerName = document.getElementById("name");
-const nextQuestion = document.getElementById("next-question");
-const exit = document.getElementById("exit-game");
 let score = 0;
 let total = 0;
-let certificateText = document.getElementById("certificate-text");
 const numbers = Array(dogs.length).fill().map((_, index) => index);//New from StackOverflow to create an array of numbers to generate unique numbers for pulling photo and answer options
 
 //Function to wait until DOM content is loaded before executing 

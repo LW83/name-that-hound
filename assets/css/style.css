@@ -30,6 +30,10 @@ body {
     color: #75726A;
 }
 
+header h1 {
+    display: inline-block;
+}
+
 /* Styling for welcome container including how to play and play game button */
 #welcome-container {
     background-color: #f3f3f3;
@@ -179,4 +183,19 @@ body {
 #certificate-image {
     display: block;
     margin: auto;
+}
+
+/* Media queries */
+@media (max-width: 750px) {
+    
+    #welcome-container, #game-container {
+        max-width:90%;
+    }
+}
+
+@media (max-width: 390px) {
+    
+    #welcome-container, #game-container {
+        max-width:90%;
+    }
 }

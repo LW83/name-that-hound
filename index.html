@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quiz to name the dog breed based on images">
     <meta name="keywords" content="quiz, dogs, dog breeds, guessing game">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <script src="https://kit.fontawesome.com/657a87c31d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,11 +16,11 @@
 </head>
 
 <body>
-<!-- -->
+<!--Logo image and Header for overall site-->
     <header>
-        <h1><img src="assets/images/header-image.png" class="header-image" alt = 'red and white boxer puppy with tilted head'> Name That Hound</h1>
+        <h1><img src="assets/images/header-image.png" class="header-image" alt ="red and white boxer puppy with tilted head"> Name That Hound</h1>
     </header>
-<!-- -->
+<!--Welcome container setting out how to play the game and button to initiate-->
     <section>
         <div id="welcome-container"><h2>Welcome to Name that Hound</h2>
             <p>Name that Hound is a fun quiz to test your knowledge of different dog breeds.</p>
@@ -44,33 +43,30 @@
             <label for="name">Enter your Name:</label>
             <input class="text-input" id="name" name="name" type="text">
             <p>We hope you enjoy the game!</p>
-            <button id="start-game" data-type="easy" class="btn btn-play" value="play the game">Play the Game</button>
+            <button id="start-game" class="btn btn-play" value="play the game">Play the Game</button>
         </div>
-<!-- -->
+<!--Game container with generated dog image, four answer options, submit button and exit option-->
         <div id="game-container">
             <div id="quiz-photo"></div>
             <div id="answer-options"></div>
             <div id="answer-feedback"></div>
-            <button id="submit-answer" data-type="submit" class="btn btn-submit" value="submit">Submit</button>
-            <button id="next-question" data-type="next" class="btn btn-next" value="next question">Next Question</button>
-            <button id="final-total" data-type="final" class="btn btn-final" value="final score">Final Score</button>
-            <div id="score-container">
-                <!--<p>Current Score: <span id="score">0</span>/<span id="total-questions">0</span>-->
-            </div>
+            <button id="submit-answer" class="btn btn-submit" value="submit">Submit</button>
+            <button id="next-question" class="btn btn-next" value="next question">Next Question</button>
+            <button id="final-total" class="btn btn-final" value="final score">Final Score</button>
+            <div id="score-container"></div>
             <div><button id="exit-game" class="exit"><i class="fa-solid fa-door-open" alt = "exit door icon"></i></button></div>
         </div>
-<!-- -->
+<!--Final score container with overall total score and congratularoty certificate populate by JS script-->
         <div id="final-score">
             <div id="certificate">
-                <div id="certificate-text">
-                </div>
+                <div id="certificate-text"></div>
                 <img id="certificate-image" src="assets/images/resized-winking-dog.png" alt="Beagle dog winking and pointing paw">
             </div>
-            <button id="play-again" data-type="easy" class="btn btn-play" value="play again">Play Again</button>
+            <button id="play-again" class="btn btn-play" value="play again">Play Again</button>
             <button id="return-home" class="btn btn-home" value="back to home">Back to Home</button>
         </div>
     </section>
-<!-- -->
+<!--Inclusion of link to JS file-->
     <script src="assets/js/script.js"></script>
 </body>
 </html>

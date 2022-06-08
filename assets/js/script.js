@@ -272,23 +272,22 @@ function noMoreQuestions(){
 function certificateGeneration(){
     if (score < 4) {
         certificateText.innerHTML = 
-        `<h3>Better Luck Next Time</h3>
+        `<h2>Better Luck Next Time</h2>
         <p>You scored ${score} out of 10</p>
         <br>
         <p>Your hound knowledge needs some Pawfecting, ${playerName.value}, but Milo here thinks you are up to the challenge!</p>`
     } else if (score < 7) {
         certificateText.innerHTML = 
-        `<h3>Pawsitive!</h3>
+        `<h2>Pawsitive!</h2>
         <p>You scored ${score} out of 10</p>
         <br>
         <p>Your know your hounds, ${playerName.value}, and Milo reckons with a bit of practice you could be Pawfect!</p>`
     } else {
         certificateText.innerHTML = 
-        `<h3>Pawfection!</h3>
+        `<h2>Pawfection!</h2>
         <p>You scored ${score} out of 10</p>
         <br>
         <p>${playerName.value}, you are the ultimate expert of hounds!</p>`
     }
-
 }
 

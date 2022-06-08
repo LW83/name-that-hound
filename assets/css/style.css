@@ -43,6 +43,7 @@ header h1 {
     border-radius: 20px;
     padding-left: 3px;
     padding-right: 3px;
+    margin-bottom: 20px;
 }
 
 #welcome-container h2, h3 {
@@ -95,6 +96,7 @@ header h1 {
     margin: auto; 
     border-radius: 20px;
     display: none;
+    margin-bottom: 20px;
 }
 
 #quiz-photo {
@@ -173,6 +175,7 @@ header h1 {
     display: inline-block; 
     margin-top: 25%;
     width: 70%;
+    font-size: large;
 }
 
 .btn-play, .btn-home {
@@ -193,9 +196,22 @@ header h1 {
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 650px) {
     
-    #welcome-container, #game-container {
-        max-width:90%;
-    }
+    #certificate-text {
+        display: inline-block; 
+        margin-top: 15%;
+        width: 80%;
+        font-size: medium;
+    }   
+}
+
+@media (max-width: 450px) {
+    
+    #certificate-text {
+        display: inline-block; 
+        margin-top: 10%;
+        width: 85%;
+        font-size: small;
+    }   
 }

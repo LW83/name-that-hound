@@ -38,6 +38,7 @@ https://www.sitepoint.com/simple-javascript-quiz/ to push answeroptions to mc ra
 https://www.codegrepper.com/code-examples/javascript/how+to+access+variable+outside+function+in+javascript
 https://stackoverflow.com/questions/7275597/getting-the-selected-radio-without-using-id-but-name
 https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors
+https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
 
 
 https://www.remove.bg/upload to remove background of images for use in header
@@ -52,19 +53,17 @@ Credits
 ***
 ## Overview 
 
-Welcome to Name That Hound, a .   
-
-**NOTE: This group has been created for the sole purposes of creating this website to demonstrate HTML and CSS skills. The group itself and the events noted are not real.**
+Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog breeds.   
 
 ![Responsiveness Demo]()
 
 ## Live Site
 
-[Name That Hound](https://lw83.github.io/)
+[Name That Hound](https://lw83.github.io/name-that-hound/)
 
 ## Repository 
 
-[https://github.com/LW83/](https://github.com/LW83/)
+[https://github.com/LW83/](https://github.com/LW83/name-that-hound/)
 ***
 ## Concept & Planning 
 
@@ -219,7 +218,7 @@ __Lighthouse Report__
   - From the source section drop-down menu, selecting the Master Branch
   - Once the master branch was been selected, the page automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here: [Name That Hound](https://lw83.github.io/) 
+The live link can be found here: [Name That Hound](https://lw83.github.io/name-that-hound/) 
 
 ***
 ## Credits  

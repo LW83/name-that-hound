@@ -45,6 +45,10 @@ body {
     padding: 3px;
 }
 
+#welcome-container h2 {
+    padding-top: 7px;
+}
+
 #welcome-container p {
     padding-left: 5px;
     padding-right: 5px;
@@ -62,6 +66,7 @@ body {
     border-radius: 8px;
     outline-color: #a49f94;
     margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 #play-span {

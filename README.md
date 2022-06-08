@@ -11,6 +11,18 @@ Bugs:
 2) Generating random answers and pushing into an array
 3) Lining up answers with radio buttons - put in a break after each line changed line from [i] to answerOptions[i] (brought in name of dog as opposed to a number) - was pushing radio options in with string of all options. pushed to new array and (final options) and pulled that into the DOM
 4) Not picking up the value of the radio button selected - hadnt applied a value in creation of radio buttons, included value to reflect assigned random answer and retested and worked.
+5) Original code:  /**function generateAnswerOptions () {
+        let newNum = Math.floor(Math.random() * dogs.length);
+        let addDogs = dogs[newNum];
+            return addDogs.name;
+    }
+        
+    for (var i = 0; i < 3; i++) {
+            generateAnswerOptions ();
+            answerOptions.push(generateAnswerOptions());
+        }**/
+
+        In certain cases was throwing up a duplicate option either correct or incorrect - wanted to ensure 4 unique options presented
 
 
 

@@ -93,7 +93,7 @@ const exit = document.getElementById("exit-game");
 let score = 0;
 let total = 0;
 let certificateText = document.getElementById("certificate-text");
-
+const numbers = Array(dogs.length).fill().map((_, index) => index + 1);//New from StackOverflow to create an array of numbers to generate unique numbers for pulling photo and answer options
 
 //Function to wait until DOM content is loaded before executing 
 
@@ -154,11 +154,13 @@ homeButton.addEventListener("click", function() {
 
 //Function to generate game
 function generateGame() {
-    let num = Math.floor(Math.random() * dogs.length);
+    numbers.sort(() => Math.random() - 0.5); 
+    let num = (numbers.slice(0, 1));
+    let newNum = (numbers.slice(1, 4)); 
     let dog = dogs[num];
     let dogPhoto = dog.image; 
-    dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function from codegrepper.com (https://www.codegrepper.com/code-examples/javascript/how+to+access+variable+outside+function+in+javascript)
-
+    dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function from codegrepper.com
+    
     function generatePhoto() {
         return photo.innerHTML = `<img src="${(dogPhoto)}" class="dogPhoto">`;
     }
@@ -166,17 +168,14 @@ function generateGame() {
     generatePhoto()
     
     let answerOptions = [];
-    function generateAnswerOptions () {
-        let newNum = Math.floor(Math.random() * dogs.length);
-        let addDogs = dogs[newNum];
-            return addDogs.name;
-    }
-        
-    for (var i = 0; i < 3; i++) {
-            generateAnswerOptions ();
-            answerOptions.push(generateAnswerOptions());
-        } 
+    function generateAnswerOptions() {
     
+        for (let i = 0; i < newNum.length; i++) {
+            let dogOptions = (dogs[newNum[i]]);
+            answerOptions.push(dogOptions.name);
+        }
+    }
+    generateAnswerOptions();
     answerOptions.push(dogName);
 
 /**
@@ -219,6 +218,9 @@ function generateGame() {
 
 scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
 
+/**
+ * 
+ */
 function resetScore(){
     score = 0; 
     total = 0; 
@@ -244,7 +246,10 @@ function checkAnswer(){
             answerFeedback.style.color = 'darkred';
         }
 }
-//ERROR - Still showing the next question button
+
+/**
+ * 
+ */
 function finalScoreTotal(){
     if (total > 9) {
         finalTotal.style.display = "inline-block";
@@ -252,13 +257,18 @@ function finalScoreTotal(){
     }
 }
 
+/**
+ * 
+ */
 function noMoreQuestions(){
     if (total > 8) {
         nextQuestion.style.display = "none";
     }
 }
 
-
+/**
+ * 
+ */
 function certificateGeneration(){
     if (score < 4) {
         certificateText.innerHTML = 

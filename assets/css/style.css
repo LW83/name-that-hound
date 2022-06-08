@@ -15,8 +15,8 @@ body {
 }
 
 .btn {
-    background-color: #a49f94;
-    color: whitesmoke;
+    background-color: #75726A;
+    color: #f5f5f5;
     font-size: medium;
     width: 120px;
     height: 60px; 
@@ -26,8 +26,8 @@ body {
 
 .btn:hover {
     background-color: #eae3d3;
-    border: 2px solid #a49f94;
-    color: #a49f94;
+    border: 2px solid #75726A;
+    color: #75726A;
 }
 
 /* Styling for welcome container including how to play and play game button */
@@ -35,7 +35,7 @@ body {
     background-color: #f3f3f3;
     max-width:700px;
     margin: auto; 
-    border: 3px solid #a49f94;
+    border: 3px solid #75726A;
     border-radius: 20px;
     padding-left: 3px;
     padding-right: 3px;
@@ -64,13 +64,13 @@ body {
     width: 200px;
     height: 25px;
     border-radius: 8px;
-    outline-color: #a49f94;
+    outline-color: #75726A;
     margin-bottom: 10px;
     padding-left: 5px;
 }
 
 #play-span {
-    background-color: #a49f94;
+    background-color: #75726A;
     color: whitesmoke;
     border-radius: 3px;
     padding: 1px;
@@ -141,7 +141,7 @@ body {
 
 #exit-game {
     padding-bottom: 10px;
-    color: #a49f94;
+    color: #75726A;
     font-size: x-large;
     cursor: pointer;
     background-color: transparent;

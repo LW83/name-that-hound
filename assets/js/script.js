@@ -93,10 +93,12 @@ const dogs = [
 ];
 let score = 0;
 let total = 0;
+let dogName;
 const numbers = Array(dogs.length).fill().map((_, index) => index);//Code from StackOverflow to create an array of numbers based on the dogs variable to generate unique numbers for pulling photo and answer options
 
 //Function to wait until DOM content is loaded before executing 
 document.addEventListener("DOMContentLoaded", function(){
+    playerName.focus();
 });
 
 //Event Listeners required to navigate game
@@ -106,6 +108,7 @@ submitButton.addEventListener("click", function() {
     finalScoreTotal(); //checks if final score button needs to be displayed
     answerFeedback.style.display = "block"; //shows answer feedback
     nextQuestion.style.display = "inline-block"; //shows next question button
+    submitButton.style.display = "none";
     noMoreQuestions(); //check if next question button should be shown
 });
 
@@ -121,6 +124,7 @@ startButton.addEventListener("click", function() {
 nextQuestion.addEventListener("click", function() {
     generateGame(); //generates a new image and answer options
     answerFeedback.style.display = "none"; //clears answer feedback from previous question
+    submitButton.style.display = "inline-block";
 });
 
 exit.addEventListener("click", function() {
@@ -153,7 +157,6 @@ homeButton.addEventListener("click", function() {
     playerName.value = ""; //clears player name entered
 });
 
-
 /**
  * Function to generate game including image, correct answer and 3 other different answer options, shuffle answers and push to DOM
  */
@@ -165,70 +168,70 @@ function generateGame() {
     let dogPhoto = dog.image; //pulls image of selected dog
     dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function (from codegrepper.com)
     
-    /**
-     * Nested function to generate a photo and push it to the DOM as basis for question 
-     * @returns randomly selected dog image from dog array 
-     */
-    function generatePhoto() {
-        return photo.innerHTML = `<img src="${(dogPhoto)}" class="dogPhoto" alt ="${dog.description}">`;
-    }
-    
-    generatePhoto()//call function to generate selected image and push to DOM
-    
-    /**
-     * Nested function to generate 3 different alternate answer options for image and push to answer options array
-     */
-    let answerOptions = [];
-    function generateAnswerOptions() {
-    
-        for (let i = 0; i < newNum.length; i++) {
-            let dogOptions = (dogs[newNum[i]]);
-            answerOptions.push(dogOptions.name);
+        /**
+         * Nested function to generate a photo and push it to the DOM as basis for question 
+         * @returns randomly selected dog image from dog array 
+         */
+        function generatePhoto() {
+            return photo.innerHTML = `<img src="${(dogPhoto)}" class="dogPhoto" alt ="${dog.description}">`;
         }
-    }
-
-    generateAnswerOptions(); //call function to create answer options
-    answerOptions.push(dogName); //push correct answer to answer options array 
-
-    /**
-     * Nested function to shuffle answer options array to ensure correct answer placement is not identifiable. This code was taken from Stack Overflow as noted in ReadMe.  
-     */
-
-    function shuffle(array) { 
-        let currentIndex = array.length,  randomIndex;
-      
-        // While there remain elements to shuffle
-        while (currentIndex != 0) {
-      
-          // Pick a remaining element
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+        
+        generatePhoto();//call function to generate selected image and push to DOM
+        
+        /**
+         * Nested function to generate 3 different alternate answer options for image and push to answer options array
+         */
+        let answerOptions = [];
+        function generateAnswerOptions() {
+        
+            for (let i = 0; i < newNum.length; i++) {
+                let dogOptions = (dogs[newNum[i]]);
+                answerOptions.push(dogOptions.name);
+            }
         }
-      
-        return array;
-    }
-      
-    shuffle(answerOptions); //call shuffle function to shuffle answers pushed to answer options array 
-    
-    /**
-     * Pushes shuffled answers into new array to be pushed as radio button options in DOM
-     */
-    let finalAnswerOptions = [];
-    for (i in answerOptions){ 
-        finalAnswerOptions.push(
-          `<label>
-            <input  type="radio" name="possibleAnswers" value="${answerOptions[i]}">
-            ${answerOptions[i]} <br>
-          </label>`
-        );
-    }
-      answers.innerHTML = finalAnswerOptions.join('');
 
-      nextQuestion.style.display = "none"; //hides next question button when game round is triggered   
+        generateAnswerOptions(); //call function to create answer options
+        answerOptions.push(dogName); //push correct answer to answer options array 
+
+        /**
+         * Nested function to shuffle answer options array to ensure correct answer placement is not identifiable. This code was taken from Stack Overflow as noted in ReadMe.  
+         */
+
+        function shuffle(array) { 
+            let currentIndex = array.length,  randomIndex;
+        
+            // While there remain elements to shuffle
+            while (currentIndex != 0) {
+        
+            // Pick a remaining element
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+        
+            // And swap it with the current element
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+        
+            return array;
+        }
+        
+        shuffle(answerOptions); //call shuffle function to shuffle answers pushed to answer options array 
+        
+        /**
+         * Pushes shuffled answers into new array to be pushed as radio button options in DOM
+         */
+        let finalAnswerOptions = [];
+        for (let i in answerOptions){ 
+            finalAnswerOptions.push(
+            `<label>
+                <input id="radio" type="radio" name="possibleAnswers" value="${answerOptions[i]}">
+                ${answerOptions[i]} <br>
+            </label>`
+            );
+        }
+        answers.innerHTML = finalAnswerOptions.join('');
+
+    nextQuestion.style.display = "none"; //hides next question button when game round is triggered   
 }
 
 /**
@@ -258,12 +261,12 @@ function checkAnswer(){
         scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
         answerFeedback.innerHTML = "<p><i class='fa-solid fa-paw'></i> Congratulations that's the right hound!</p>";
         answerFeedback.style.color = 'green';
-        } else {
-            ++total;
-            scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
-            answerFeedback.innerHTML = `<p><i class='fa-solid fa-heart-crack'></i> Hard luck! The correct answer was ${dogName} </p>`;
-            answerFeedback.style.color = 'darkred';
-        }
+    } else {
+        ++total;
+        scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
+        answerFeedback.innerHTML = `<p><i class='fa-solid fa-heart-crack'></i> Hard luck! The correct answer was ${dogName} </p>`;
+        answerFeedback.style.color = 'darkred';
+      }
 }
 
 /**
@@ -280,7 +283,7 @@ function finalScoreTotal(){
  * Function to hide next question button to end game after 10 questions
  */
 function noMoreQuestions(){
-    if (total > 8) {
+    if (total > 9) {
         nextQuestion.style.display = "none";
     }
 }
@@ -294,19 +297,18 @@ function certificateGeneration(){
         `<h2>Better Luck Next Time</h2>
         <p>You scored ${score} out of 10</p>
         <br>
-        <p>Your hound knowledge needs some Pawfecting, ${playerName.value}, but Milo here thinks you are up to the challenge!</p>`
+        <p>Your hound knowledge needs some Pawfecting, ${playerName.value}, but Milo here thinks you are up to the challenge!</p>`;
     } else if (score < 7) {
         certificateText.innerHTML = 
         `<h2>Pawsitive!</h2>
         <p>You scored ${score} out of 10</p>
         <br>
-        <p>Your know your hounds, ${playerName.value}, and Milo reckons with a bit of practice you could be Pawfect!</p>`
+        <p>Your know your hounds, ${playerName.value}, and Milo reckons with a bit of practice you could be Pawfect!</p>`;
     } else {
         certificateText.innerHTML = 
         `<h2>Pawfection!</h2>
         <p>You scored ${score} out of 10</p>
         <br>
-        <p>${playerName.value}, you are the ultimate expert of hounds!</p>`
+        <p>${playerName.value}, you are the ultimate expert of hounds!</p>`;
     }
 }
-

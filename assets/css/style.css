@@ -30,6 +30,12 @@ body {
     color: #75726A;
 }
 
+/* From https://zellwk.com/blog/style-hover-focus-active-states/ to help highight current element for accessibility */
+.btn:focus { 
+    outline: none;
+    box-shadow: 0 0 0 3px yellow;
+}
+
 header h1 {
     display: inline-block;
     padding-right: 5px;

@@ -1,4 +1,4 @@
-//Declare variables
+//Declare variables used in game
 const welcome = document.getElementById("welcome-container");
 let playerName = document.getElementById("name");
 const startButton = document.getElementById("start-game");
@@ -15,7 +15,7 @@ let finalContainer = document.getElementById("final-score");
 let certificateText = document.getElementById("certificate-text");
 const playAgainButton = document.getElementById("play-again");
 const homeButton = document.getElementById("return-home");
-let dogs = [
+const dogs = [
     { name : 'Afghan Hound', image : 'assets/images/dogs/afghan-hound.jpeg', description: 'large long haired slim build breed black and beige color'},
     { name : 'Airedale Terrier', image : 'assets/images/dogs/airedale-terrier.jpeg', description: 'medium wire haired breed black and tan color'}, 
     { name : 'Akita', image: 'assets/images/dogs/akita.jpeg', description: 'large stocky breed thick coat black brown and white color'},
@@ -93,80 +93,91 @@ let dogs = [
 ];
 let score = 0;
 let total = 0;
-const numbers = Array(dogs.length).fill().map((_, index) => index);//New from StackOverflow to create an array of numbers to generate unique numbers for pulling photo and answer options
+const numbers = Array(dogs.length).fill().map((_, index) => index);//Code from StackOverflow to create an array of numbers based on the dogs variable to generate unique numbers for pulling photo and answer options
 
 //Function to wait until DOM content is loaded before executing 
+document.addEventListener("DOMContentLoaded", function(){
+});
 
-//Event Listeners
+//Event Listeners required to navigate game
 
 submitButton.addEventListener("click", function() {
-    checkAnswer();
-    finalScoreTotal();
-    answerFeedback.style.display = "block";
-    nextQuestion.style.display = "inline-block";
-    noMoreQuestions();
+    checkAnswer(); //checks if answer is correct
+    finalScoreTotal(); //checks if final score button needs to be displayed
+    answerFeedback.style.display = "block"; //shows answer feedback
+    nextQuestion.style.display = "inline-block"; //shows next question button
+    noMoreQuestions(); //check if next question button should be shown
 });
 
 startButton.addEventListener("click", function() {
-    generateGame();
-    resetScore();
-    game.style.display = "block";
-    welcome.style.display = "none";
-    finalTotal.style.display = "none";
-    submitButton.style.display = "inline-block";
+    generateGame(); //generates image and answer options
+    resetScore(); //ensures game is reset to zero and feedback cleared
+    game.style.display = "block"; //shows main game container
+    welcome.style.display = "none"; //hides welcome container and game instructions
+    finalTotal.style.display = "none"; //hides final total button
+    submitButton.style.display = "inline-block"; //shows submit button 
 });
 
 nextQuestion.addEventListener("click", function() {
-    generateGame();
-    answerFeedback.style.display = "none";
+    generateGame(); //generates a new image and answer options
+    answerFeedback.style.display = "none"; //clears answer feedback from previous question
 });
 
 exit.addEventListener("click", function() {
-    resetScore();
-    welcome.style.display = "block";
-    game.style.display = "none";
+    resetScore(); //resets scores to zero
+    welcome.style.display = "block"; //shows welcome container
+    game.style.display = "none"; //hides game container
 });
 
 finalTotal.addEventListener("click", function() {
-    certificateGeneration();
-    finalContainer.style.display = "block";
-    game.style.display = "none";
+    certificateGeneration(); //generates certificate with user score
+    finalContainer.style.display = "block"; //shows final score container with certificate
+    game.style.display = "none"; //hides game conatainer
 });
 
 playAgainButton.addEventListener("click", function() {
-    resetScore();
-    answerFeedback.style.display = "none";
-    generateGame();
-    finalContainer.style.display = "none";
-    game.style.display = "block";
-    finalTotal.style.display = "none";
-    submitButton.style.display = "inline-block";
+    resetScore(); //resets scores for new game 
+    answerFeedback.style.display = "none"; //clears answer feedback
+    generateGame(); //generates image and answer options
+    finalContainer.style.display = "none"; //hides final score container
+    game.style.display = "block"; //shows game container
+    finalTotal.style.display = "none"; //hides final total button
+    submitButton.style.display = "inline-block"; //shows submit button for game
 });
 
 homeButton.addEventListener("click", function() {
-    resetScore();
-    welcome.style.display = "block";
-    game.style.display = "none";
-    finalContainer.style.display = "none";
-    playerName.value = "";
+    resetScore(); //resets scores for new game
+    welcome.style.display = "block"; //shows welcome container
+    game.style.display = "none"; //hides game container
+    finalContainer.style.display = "none"; //hides final score container
+    playerName.value = ""; //clears player name entered
 });
 
 
-//Function to generate game
+/**
+ * Function to generate game including image, correct answer and 3 other different answer options, shuffle answers and push to DOM
+ */
 function generateGame() {
-    numbers.sort(() => Math.random() - 0.5); 
-    let num = (numbers.slice(0, 1));
-    let newNum = (numbers.slice(1, 4)); 
-    let dog = dogs[num];
-    let dogPhoto = dog.image; 
-    dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function from codegrepper.com
+    numbers.sort(() => Math.random() - 0.5); //randomly sorts numbers variable
+    let num = (numbers.slice(0, 1)); //takes first number of numbers array 
+    let newNum = (numbers.slice(1, 4)); //takes next 3 numbers from numbers array to ensure all answer options will be unique
+    let dog = dogs[num]; //selects dog for question from dog array 
+    let dogPhoto = dog.image; //pulls image of selected dog
+    dogName = dog.name; //remove var/let to enable dogName to be accessed outside of function (from codegrepper.com)
     
+    /**
+     * Nested function to generate a photo and push it to the DOM as basis for question 
+     * @returns randomly selected dog image from dog array 
+     */
     function generatePhoto() {
         return photo.innerHTML = `<img src="${(dogPhoto)}" class="dogPhoto" alt ="${dog.description}">`;
     }
     
-    generatePhoto()
+    generatePhoto()//call function to generate selected image and push to DOM
     
+    /**
+     * Nested function to generate 3 different alternate answer options for image and push to answer options array
+     */
     let answerOptions = [];
     function generateAnswerOptions() {
     
@@ -175,24 +186,25 @@ function generateGame() {
             answerOptions.push(dogOptions.name);
         }
     }
-    generateAnswerOptions();
-    answerOptions.push(dogName);
 
-/**
- * Function to shuffle array to ensure correct answer placement is not identifiable. This code was taken from Stack Overflow as noted in ReadMe.  
- */
+    generateAnswerOptions(); //call function to create answer options
+    answerOptions.push(dogName); //push correct answer to answer options array 
+
+    /**
+     * Nested function to shuffle answer options array to ensure correct answer placement is not identifiable. This code was taken from Stack Overflow as noted in ReadMe.  
+     */
 
     function shuffle(array) { 
         let currentIndex = array.length,  randomIndex;
       
-        // While there remain elements to shuffle.
+        // While there remain elements to shuffle
         while (currentIndex != 0) {
       
-          // Pick a remaining element.
+          // Pick a remaining element
           randomIndex = Math.floor(Math.random() * currentIndex);
           currentIndex--;
       
-          // And swap it with the current element.
+          // And swap it with the current element
           [array[currentIndex], array[randomIndex]] = [
             array[randomIndex], array[currentIndex]];
         }
@@ -200,26 +212,32 @@ function generateGame() {
         return array;
     }
       
-    shuffle(answerOptions);
-      
-      let finalAnswerOptions = [];
-      for (i in answerOptions){ 
+    shuffle(answerOptions); //call shuffle function to shuffle answers pushed to answer options array 
+    
+    /**
+     * Pushes shuffled answers into new array to be pushed as radio button options in DOM
+     */
+    let finalAnswerOptions = [];
+    for (i in answerOptions){ 
         finalAnswerOptions.push(
           `<label>
             <input  type="radio" name="possibleAnswers" value="${answerOptions[i]}">
             ${answerOptions[i]} <br>
           </label>`
         );
-      }
+    }
       answers.innerHTML = finalAnswerOptions.join('');
 
-      nextQuestion.style.display = "none";    
+      nextQuestion.style.display = "none"; //hides next question button when game round is triggered   
 }
 
+/**
+ * Creates score container in DOM to reflect current correct score and total questions played
+ */
 scoreContainer.innerHTML = `<p>Current Score: <span id="score">${score}</span>/<span id="total-questions">${total}</span>`;
 
 /**
- * 
+ * Function to reset scores to zero and hide answer feedback when game is replayed
  */
 function resetScore(){
     score = 0; 
@@ -229,7 +247,8 @@ function resetScore(){
 }
 
 /**
- * Function to check if the user answer is correct, increase score for correct answer, increase total questions and provide feedback on answer provided
+ * Function to check if the user answer is correct, increase score for correct answer, 
+ * increase total questions and provide feedback on answer provided
  */
 function checkAnswer(){
     let userAnswer = document.querySelector('input[name="possibleAnswers"]:checked').value;
@@ -248,7 +267,7 @@ function checkAnswer(){
 }
 
 /**
- * 
+ * Function to hide submit button and display Final Total button when tenth question reached
  */
 function finalScoreTotal(){
     if (total > 9) {
@@ -258,7 +277,7 @@ function finalScoreTotal(){
 }
 
 /**
- * 
+ * Function to hide next question button to end game after 10 questions
  */
 function noMoreQuestions(){
     if (total > 8) {
@@ -267,7 +286,7 @@ function noMoreQuestions(){
 }
 
 /**
- * 
+ * Function to generate certificate wording based on score range achieved
  */
 function certificateGeneration(){
     if (score < 4) {

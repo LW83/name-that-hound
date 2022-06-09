@@ -39,6 +39,7 @@ https://www.codegrepper.com/code-examples/javascript/how+to+access+variable+outs
 https://stackoverflow.com/questions/7275597/getting-the-selected-radio-without-using-id-but-name
 https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors
 https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
+https://sebhastian.com/javascript-show-hide-div-onclick-toggle/#:~:text=To%20display%20or%20hide%20a,which%20is%20block%20)%20to%20none%20. - assistance in how to show and hide divs for different sections of the game
 
 
 https://www.remove.bg/upload to remove background of images for use in header

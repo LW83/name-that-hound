@@ -222,7 +222,7 @@ function generateGame() {
          * Pushes shuffled answers into new array to be pushed as radio button options in DOM
          */
         let finalAnswerOptions = [];
-        for (let i in answerOptions){ 
+        for (let i =0; i<answerOptions.length; i++){ 
             finalAnswerOptions.push(
             `<label>
                 <input id="radio" type="radio" name="possibleAnswers" value="${answerOptions[i]}">

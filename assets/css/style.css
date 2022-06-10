@@ -228,6 +228,13 @@ header img {
     }   
 }
 
+@media (max-width: 500px) {
+    
+    #certificate {
+        height: 350px;
+    }
+}
+
 @media (max-width: 350px) {
     
     #certificate-text {

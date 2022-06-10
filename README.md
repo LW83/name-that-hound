@@ -1,60 +1,8 @@
-https://imagecolorpicker.com/en - select colors
-adobe stock image - background image
-https://www.istockphoto.com/search/2/image?mediatype=illustration&phrase=dog+borders - certificate border
-https://imgflip.com/tag/winking+dog - winking dog image
-
-Boxer: DogTime.com
-
-
-Bugs: 
-1) Bringing in images: Challenges; files paths, bringing into DOM (typos in template literals)
-2) Generating random answers and pushing into an array
-3) Lining up answers with radio buttons - put in a break after each line changed line from [i] to answerOptions[i] (brought in name of dog as opposed to a number) - was pushing radio options in with string of all options. pushed to new array and (final options) and pulled that into the DOM
-4) Not picking up the value of the radio button selected - hadnt applied a value in creation of radio buttons, included value to reflect assigned random answer and retested and worked.
-5) Original code:  /**function generateAnswerOptions () {
-        let newNum = Math.floor(Math.random() * dogs.length);
-        let addDogs = dogs[newNum];
-            return addDogs.name;
-    }
-        
-    for (var i = 0; i < 3; i++) {
-            generateAnswerOptions ();
-            answerOptions.push(generateAnswerOptions());
-        }**/
-
-        In certain cases was throwing up a duplicate option either correct or incorrect - wanted to ensure 4 unique options presented
-
-
-
-Resources: 
-https://stackoverflow.com/questions/70983009/im-creating-a-quiz-with-5-random-questions-out-of-an-array-with-20-i-want-to
-
-https://www.w3schools.com/js/js_random.asp - creating a random number for use in image generation 
-https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested-objects-arrays-or-json
-https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
-https://stackoverflow.com/questions/44008092/how-to-call-a-function-multiple-times
-https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-https://www.sitepoint.com/simple-javascript-quiz/ to push answeroptions to mc radio buttons
-https://www.codegrepper.com/code-examples/javascript/how+to+access+variable+outside+function+in+javascript
-https://stackoverflow.com/questions/7275597/getting-the-selected-radio-without-using-id-but-name
-https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors
-https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
-https://sebhastian.com/javascript-show-hide-div-onclick-toggle/#:~:text=To%20display%20or%20hide%20a,which%20is%20block%20)%20to%20none%20. - assistance in how to show and hide divs for different sections of the game
-
-
-https://www.remove.bg/upload to remove background of images for use in header
-https://www.simpleimageresizer.com/upload to resize image
-
-Credits
- - Love Maths
- - Slack support
- - Stackoverflow
-
- # Name That Hound 
+# Name That Hound 
 ***
 ## Overview 
 
-Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog breeds.   
+Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog breeds. As a lover of dogs, I wanted to create a simple but fun quiz to allow people to test their knowledge of different types of dogs.
 
 ![Responsiveness Demo]()
 
@@ -146,6 +94,10 @@ __Favicon__
 ***
 ## Testing 
 
+### User Stories Testing
+
+### Features Testing
+
 ### Responsiveness Testing
  - Responsiveness of the site was tested using Dev Tools for all screen size widths from 320px up to 1750px.
  - Responsiveness was also specifically checked for the following devices within Dev Tools:
@@ -183,7 +135,7 @@ __Favicon__
   - The following aspects of the site development have been specifically included with accessibility in mind and as recommended by the above sources: 
     - 
  
-### Validation Testing 
+### Code Validation Testing 
 
 __HTML Validation__
   - No errors were returned for any of the pages in the site when passing through the official W3C Validator. 
@@ -200,17 +152,33 @@ __Lighthouse Report__
 
   ![Lighthouse Report]()
 
-  ![Lighthouse Report]()
-
   In addition all links within the site have been tested to ensure they are functioning as intended. 
 
 ### Fixed Bugs
- - 
+ - Bugs: 
+1) Bringing in images: Challenges; files paths, bringing into DOM (typos in template literals)
+2) Generating random answers and pushing into an array
+3) Lining up answers with radio buttons - put in a break after each line changed line from [i] to answerOptions[i] (brought in name of dog as opposed to a number) - was pushing radio options in with string of all options. pushed to new array and (final options) and pulled that into the DOM
+4) Not picking up the value of the radio button selected - hadnt applied a value in creation of radio buttons, included value to reflect assigned random answer and retested and worked.
+5) Original code:  /**function generateAnswerOptions () {
+        let newNum = Math.floor(Math.random() * dogs.length);
+        let addDogs = dogs[newNum];
+            return addDogs.name;
+    }
+        
+    for (var i = 0; i < 3; i++) {
+            generateAnswerOptions ();
+            answerOptions.push(generateAnswerOptions());
+        }**/
+
+        In certain cases was throwing up a duplicate option either correct or incorrect - wanted to ensure 4 unique options presented
 
 ### Unfixed Bugs
 - During the project there were a couple of ideas I had which I found were not possible to implement for various reasons, so whilst not stricly unfixed bugs these included:
-  - 
- 
+  - Focus on radio buttons
+  - Duplicate images
+
+
 ***
 ## Deployment
 
@@ -225,8 +193,10 @@ The live link can be found here: [Name That Hound](https://lw83.github.io/name-t
 ## Credits  
 
 ### Media
- - The images used in the site have been taken from the following sources and copyright remains with these sources: 
-     - 
+ - The winking dog image utilised in the final certificate was taken from [ImgFlip](https://imgflip.com/).
+ - All other dog images used in the site have been taken from [DogTime](https://dogtime.com) and copyright remains with this source.
+ - The background image used for the site has been downloaded from [Adobe Stock Images](https://stock.adobe.com/ie/). 
+ https://www.istockphoto.com/search/2/image?mediatype=illustration&phrase=dog+borders - certificate border
 
 ### Languages Used
   - HTML5
@@ -235,17 +205,16 @@ The live link can be found here: [Name That Hound](https://lw83.github.io/name-t
 
 ### Tools & Online Resources Utilised
  - The following tools and resources have been utilised in the creation of this project: 
-     - [Balsamiq](https://balsamiq.com/): For creation of wireframes.
-     - GitHub & Gitpod: For development and deployment of the site.
-     - [Pxhere](https://pxhere.com): To provide a suitable hero image. 
-     - [Image Color Picker](https://imagecolorpicker.com/en): To match colours from the hero image.
-     - [Google Fonts](https://fonts.google.com/): For site fonts.
-     - [Image resizer](https://imageresizer.com/): For resizing images.
-     - [Compressor.io](https://compressor.io/): For compressing image file sizes. 
-     - [Font Awesome](https://fontawesome.com/): For icons used across the site. 
-     - [FS Symbols](https://fsymbols.com/copyright/): For the copyright symbol for inclusion in the footer. 
-     - [W3 Schools](https://www.w3schools.com/html/html_favicon.asp): For general guidance and research and for how to include a favicon. 
-     - [Code Grepper](https://www.codegrepper.com/code-examples/html/css+change+font+awesome+icon+color): To change the colour of the font awesome icon in logo.
+     - [Balsamiq](https://balsamiq.com/): For creation of wireframes. /
+     - GitHub & Gitpod: For development and deployment of the site. /
+     - [Image Color Picker](https://imagecolorpicker.com/en): To match colours from the background image for use in color theme of site. /
+     - [Google Fonts](https://fonts.google.com/): For site fonts. /
+     - [Compressor.io](https://compressor.io/): For compressing image file sizes. /
+     - [Font Awesome](https://fontawesome.com/): For icons used across the site. /
+     https://www.remove.bg/upload to remove background of images for use in header
+https://www.simpleimageresizer.com/upload to resize image
+     - [W3 Schools](https://www.w3schools.com/js/js_random.asp): For general guidance and research and for further direction on how to create a random number used for generating image in game.  
+     - [Code Grepper](https://www.codegrepper.com/code-examples/javascript/how+to+access+variable+outside+function+in+javascript): To 
      - [Stack Overflow](https://stackoverflow.com/questions/19089018/how-to-align-form-at-the-center-of-the-page-in-html-css): For general guidance and research and for how to centre form.
      - [WAI Test](https://www.w3.org/WAI/test-evaluate/preliminary/): For accessibility checks
      - [Wave (Web Accessibility Evaluation Tool)](https://wave.webaim.org/): For accessibility checks
@@ -263,3 +232,16 @@ The live link can be found here: [Name That Hound](https://lw83.github.io/name-t
  - In addition a big thank you to the following people for their assistance in this project:
      - Kasia Bogucka: Our cohort facilitator for keeping us all on track and answering all and any of the many questions!
      - My cohort: For our weekly checkins and tips
+     - Mike Avgeros: For responding to my query on Slack 
+
+Resources: 
+https://stackoverflow.com/questions/70983009/im-creating-a-quiz-with-5-random-questions-out-of-an-array-with-20-i-want-to
+https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested-objects-arrays-or-json
+https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
+https://stackoverflow.com/questions/44008092/how-to-call-a-function-multiple-times
+https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+https://www.sitepoint.com/simple-javascript-quiz/ to push answeroptions to mc radio buttons
+https://stackoverflow.com/questions/7275597/getting-the-selected-radio-without-using-id-but-name
+https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors
+https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
+https://sebhastian.com/javascript-show-hide-div-onclick-toggle/#:~:text=To%20display%20or%20hide%20a,which%20is%20block%20)%20to%20none%20. - assistance in how to show and hide divs for different sections of the game

@@ -104,11 +104,12 @@ document.addEventListener("DOMContentLoaded", function(){
 //Event Listeners required to navigate game
 
 submitButton.addEventListener("click", function() {
+    answerAlert();
     checkAnswer(); //checks if answer is correct
     finalScoreTotal(); //checks if final score button needs to be displayed
     answerFeedback.style.display = "block"; //shows answer feedback
     nextQuestion.style.display = "inline-block"; //shows next question button
-    submitButton.style.display = "none";
+    submitButton.style.display = "none"; //hides submit button 
     noMoreQuestions(); //check if next question button should be shown
 });
 
@@ -124,7 +125,7 @@ startButton.addEventListener("click", function() {
 nextQuestion.addEventListener("click", function() {
     generateGame(); //generates a new image and answer options
     answerFeedback.style.display = "none"; //clears answer feedback from previous question
-    submitButton.style.display = "inline-block";
+    submitButton.style.display = "inline-block"; //redisplays submit button 
 });
 
 exit.addEventListener("click", function() {
@@ -310,5 +311,14 @@ function certificateGeneration(){
         <p>You scored ${score} out of 10</p>
         <br>
         <p>${playerName.value}, you are the ultimate expert of hounds!</p>`;
+    }
+}
+
+/**
+ * Function to alert user to select an answer in order to proceed with the quiz
+ */
+function answerAlert(){
+    if (document.querySelector('input[name="possibleAnswers"]:checked')==null) {
+        alert (`Please select an answer in order to proceed`);
     }
 }

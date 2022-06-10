@@ -319,6 +319,6 @@ function certificateGeneration(){
  */
 function answerAlert(){
     if (document.querySelector('input[name="possibleAnswers"]:checked')==null) {
-        alert (`Please select an answer in order to proceed`);
+        alert ("Please select an answer in order to proceed");
     }
 }

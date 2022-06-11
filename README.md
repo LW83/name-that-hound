@@ -2,7 +2,9 @@
 ***
 ## Overview 
 
-Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog breeds. As a dog lover myself, I wanted to create a fun quiz of 10 multiple choice questions that can be played and enjoyed by any age. Each round generates a fresh mix of images so the game can be played time and time again.
+Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog breeds!
+
+As a dog lover myself, I wanted to create a fun quiz of 10 multiple choice questions that can be played and enjoyed by any age. Each round generates a fresh mix of images so the game can be played time and time again.
 
 ![Responsiveness Demo](./docs/responsive-devices.png)
 
@@ -17,14 +19,14 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
 ## Table of Contents:
 * [**Name That Hound**](#name-that-hound)
   * [**Overview**](#overview)
-  * [**Concept & Planning**](#concept-and-planning)
+  * [**Concept and Planning**](#concept-and-planning)
     * [**Target Audience**](#target-audience)
     * [**User Stories**](#user-stories)
     * [**Site Aims**](#site-aims)
     * [**Wireframes**](#wireframes)
     * [**Color Scheme**](#color-scheme)
     * [**Fonts**](#fonts)
-  * [**Existing Featurese**](#existing-features)
+  * [**Existing Features**](#existing-features)
     * [**Header**](#header)
     * [**Footer**](#footer)
     * [**Welcome Page**](#welcome-page)
@@ -48,7 +50,7 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
     * [**Code Utilisation**](#code-utilisation)
     * [**People**](#people)
 ***
-## Concept & Planning 
+## Concept and Planning 
 
 ### UX
 
@@ -94,7 +96,7 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
 
  __Game Page__
   
-  - The main gamepage sets out the generated dog image, the multiple choice answers and a submit button. The user also has the option to exit the game if they wish. 
+  - The main game page sets out the generated dog image, the multiple choice answers and a submit button. The user also has the option to exit the game if they wish. 
   - Originally, I considered including a question line but in building the site I abandoned this as I felt it was intuitive and a waste of screen space to include a repeat 'What dog breed is this?' line. 
 
  ![Balsamiq Homepage](./docs/wireframe-game.png)
@@ -108,7 +110,7 @@ __Final Page__
 ### Color Scheme
 - To decide on the color scheme for the site, I first selected the background-image. This image was selected from [Abode Images](https://stock.adobe.com/ie/).
 - Once I had decided on the image, I used [Image Color Picker](https://imagecolorpicker.com/en) to identify different colors within the image to use as the basis for font, border and icon colors within the site. 
-- In order to ensure the colors selected had sufficient contrast to meet accessibility requirements, I validated the color palette using [Eight Shapes Contrast Grid](https://contrast-grid.eightshapes.com).
+- In order to ensure the font colors selected had sufficient contrast to meet accessibility requirements, I validated the color palette using [Eight Shapes Contrast Grid](https://contrast-grid.eightshapes.com).
 
 ![Color Contrast](./docs/color-grid.png)
 
@@ -178,11 +180,11 @@ __Favicon__
 ![Correct Answer](./docs/correct-message.png)
    
    - If an incorrect answer has been selected, the user is notified that the answer is incorrect and what the correct answer was in order to facilitate learning the breed. The correct scores number remains unchanged and the total questions asked increases by one. 
-   - Similar to the correct answer, a Font Awesome icon of a broken heard has been added to this message and it is styled in dark red to denote a negative answer.  
+   - Similar to the correct answer, a Font Awesome icon of a broken heart has been added to this message and it is styled in dark red to denote a negative answer.  
 
 ![Incorrect Answer](./docs/incorrect-message.png)
 
-  - Finally the Game page has an exit icon should the user wish to exit the game before it is finished. This icon takes the user back to the Welcome page of the site. 
+  - Finally the game page has an exit icon should the user wish to exit the game before it is finished. This icon takes the user back to the Welcome page of the site. 
 
 ![Exit](./docs/exit.png)
 
@@ -253,14 +255,14 @@ __Favicon__
 ### Accessibility Testing 
 
   - By the nature of the fact that this is an image based quiz, this may present challenges for visually impaired users. To the extent possible this has been mitigated by including alt tags with a description of the dog image excluding the breed name to try and facilitate usage of the game by visually impaired individuals. 
-  - The accessibility of the site has also been tested through the following tools: 
+  - The accessibility of the site has also been tested through the following tools with no issues: 
 
     - Dev Tools Lighthouse Report (screenshot included in Code Validation Testing section below)
     - [Wave (Web Accessibility Evaluation Tool)](https://wave.webaim.org/)
           - [Wave Test](./docs/wave.png)
           - [Wave Summary](./docs/wave2.png)
 
-  - The following aspects of the site development have been specifically included with accessibility in mind and as recommended by the above sources: 
+  - The following aspects of the site development have been specifically included with accessibility in mind: 
     - For all images, alt tags with appropriate descriptions have been applied.
     - Keyboard navigation for the site has been tested and is functioning as expected. 
     - All color contrasts have been tested and validated for areas with text. 
@@ -288,7 +290,7 @@ __CSS Validation__
   
   ![(Jigsaw) validator](./docs/jigsaw.png)
 
-  - One warning remains from the CSS validation.
+  - One warning remains from the CSS validation which is not considered of significant impact. 
 
   ![(Jigsaw) validator](./docs/jigsaw-warning.png)
 
@@ -302,9 +304,11 @@ __Javascript Validation__
   - One warning was raised about the use of a for in loop that was being used in the generation of answer options function. This was changed to a for let loop to mitigate the risks created from using a for in loop and this warning was remediated.  
  
   ![JSHint Warning](./docs/jshint-warning.png)
+
+  - One warning remains which is not considered of significant impact. 
   
 __Lighthouse Report__
-  - In addition to the HTML, CSS and JS Validation, a mobile and desktop lighthouse report for the site was generated through Dev Tools.
+  - In addition to the HTML, CSS and JS Validation, a mobile and desktop lighthouse report for the site was generated through Dev Tools with positive scores.
 
   ![Lighthouse Desktop Report](./docs/lighthouse-desktop.png)
 
@@ -341,19 +345,16 @@ __Lighthouse Report__
 
     3. Not picking up the value of the radio button selected:  
           - Issue: The radio buttons were not picking up the dog name but were showing as numbers. 
-          - Solution: I hadn't applied a value in creation of radio buttons which once included to reflect the assigned random answer was retested and worked.
+          - Solution: I hadn't applied a value in creation of radio buttons which once included to reflect the assigned random answer was retested and worked as required.
           - Resource: Stack Overflow
     
     4. Lining up answers with radio buttons:
-          - Issue: Initially, I struggled with generating the radio button options with the buttons showing up as number options, showing up in a straight line rather than stacked or showing up as lines of all options. 
+          - Issue: Initially, I struggled with generating the radio button options with the buttons showing up in a straight line rather than stacked or showing up as lines of all options. 
           - Solution: In order to stop all four options showing in one line, I needed to include the [i] after answerOptions. To stop the buttons appearing one after another in a line I add a <br> tag into the code. Finally I found that these answer options generated needed to be pushed into a new array (finalAnswerOptions) in order to be pushed as radio buttons to display correctly in the DOM. 
           - Resource: General review of course notes and trial and error. 
 
-    ![Radio Buttons Bug](./docs/radio-bug.png)
-
     5. Generation of unique answer option: 
-          - Issue: When first enabled the anwer options randomly generated based on the below code could generate an option that was the same as the correct answer or generate the same incorrect answer twice resulting in the same option appearing multiple times in the multiple choice options for a given image. 
-                      Original code:  
+          - Issue: When first enabled, the anwer options randomly generated based on the below code could generate an option that was the same as the correct answer or generate the same incorrect answer twice resulting in the same option appearing multiple times in the multiple choice options for a given image. 
                       
                       function generateAnswerOptions () {
                       let newNum = Math.floor(Math.random() * dogs.length);
@@ -370,11 +371,13 @@ __Lighthouse Report__
           - Resource: [Stack Overflow](https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100)
 
 ### Unfixed Bugs
-- During the project there were a couple of ideas I had which I found were not possible to implement for various reasons, so whilst not stricly unfixed bugs these included:
+- The two bugs that remain unfixed are: 
 
   - Focus on radio buttons: I wanted to add .focus() to the radio buttons so that the first radio button was already selected for the user when the Game page was generated. Despite researching solutions on Stack Overflow and trying to apply the focus based on ID and name and selected the first element of the array, this functionality did not appear to work so it is something I would like to try and resolve in the future. The focus was added to the name box on the Welcome page successfully. 
 
   - Duplicate images: As noted above, currently the images are randomly generated from an array. Due to this struture in a given round of 10 questions, there is a chance that the same image may appear for the user. Whilst this does not affect the functionality of the game it is something I would like to try and resolve in a future fix to further enhance the user experience. 
+
+- I would like to fix both of the above for a future iteration of the game. 
 
 ***
 ## Deployment
@@ -418,6 +421,7 @@ The live link can be found here: [Name That Hound](https://lw83.github.io/name-t
      - [Eight Shapes Contrast Grid](https://contrast-grid.eightshapes.com): For color contract checks
      - [Slack](https://slack.com/intl/en-ie/): For general guidance and research on project considerations. 
      - Google Chrome Dev Tools: For validation and responsiveness checks
+     - [Python Tutor](https://pythontutor.com/): For testing code throughout development
      - [Am I Responsive](https://ui.dev/amiresponsive): To create the multi-device screenshot for inclusion in my Readme file. 
      - [W3C CSS (Jigsaw) Validator](https://jigsaw.w3.org/css-validator/)
      - [W3C HTML Validator](https://validator.w3.org/)

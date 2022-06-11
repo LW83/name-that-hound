@@ -164,6 +164,7 @@ header img {
 }
 
 /* Styling for game container including image, answer options, submit button, feedback and score */
+
 #final-score {
     background-color: #f3f3f3;
     max-width:700px;

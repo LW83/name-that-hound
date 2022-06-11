@@ -79,60 +79,111 @@ __Final Page__
  ![Balsamiq Homepage](./docs/final-iphone.png)
 
 ### Color Scheme
-- To decide on the color scheme for the site, I first selected the background-image. This image was selected from [Abode Images](https://.com/).
+- To decide on the color scheme for the site, I first selected the background-image. This image was selected from [Abode Images](https://stock.adobe.com/ie/).
 - Once I had decided on the image, I used [Image Color Picket](https://imagecolorpicker.com/en) to identify different colors within the image to use as the basis for font, border and icon colors within the site. 
 - In order to ensure the colors selected had sufficient contrast to meet accessibility requirements, I validated the color palette using [Eight Shapes Contrast Grid](https://contrast-grid.eightshapes.com).
 
-![Color Contrast]()
+![Color Contrast](./docs/color-grid.png)
 
 ### Fonts
- - The fonts utilised are consistent across the page and are from [Google fonts](https://fonts.google.com/). 
- - The font for the logo and navigation bar is . I chose this font  
- - For the body of the site, I have used . I chose this font for the main body  
- - Sans serif has been applied as a backup font for both. 
+ - The fonts utilised are consistent across the page views and are from [Google fonts](https://fonts.google.com/). 
+ - For the whole site, I have used the Poppins font as it was clean and simple. As there is a lot of imagery in the site I did not want a font that detracted from this or made the site overly fussy.   
+ - Sans serif has been applied as a backup font. 
 
 ***
 ## Existing Features 
 
-### Header & Navigation
+### Header
 
 __Logo__
 
-  - The logo 
+  - The logo is made up of the game and site name ("Name that Hound") and a logo image of a Boxer tilting his head as a nod to the fact that the game is a quiz game. The choice of boxer is also a nod to my own dog Hugo, a boxer!
+  - This image has been taken from [DogTime](https://dogtime.com) and copyright remains with this source. 
+  - [Remove.bg](https://www.remove.bg/upload) was used to remove the background of the images for use in header and [Simple Image Resizer](https://www.simpleimageresizer.com/upload) to resize image. 
 
-  ![Logo]()
-
-__Navigation__
-
-  - 
+  ![Logo](./docs/header.png)
 
 __Favicon__
 
-  -  A favicon has been added to show up in the title of the page and is consistent with the icon used in the logo itself. 
+  -  A favicon has been added to show up in the title of the page and is a simple dog icon from Font Awesome. 
   
-  ![Favicon]()
+  ![Favicon](./docs/title-favicon.png)
 
 ### Footer
 
-  - 
+  - I decided not to add a footer to the page as I did not feel the game needed it or benefitted from it. It may be worth adding in the future if there are relevant social media pages to be linked to. 
 
-### X Page
+### Welcome Page
 
-  - The 
+  - The welcome page is a clean box which welcomes the user and sets out simply the instructions for the game. 
+  - Included in this page is a text box for the user to enter their name, which is then used to personalise the final score certificate generated at the end of the game. 
+  - Finally the page view contains a button to start the game which has a hover effect and pointer added to provide additional feedback to the user. 
 
-### X Page
+  ![Welcome Page](./docs/welcome-screenshot.png)
+  ![Button Hover](./docs/button-hover.png)
 
-  - The 
+### Game Page
 
-### X Page
+  - The main game page of the site is contained in a single container for a clean user interface. 
+  - The background color of the game container is consistent with the bone and paw image color in the background image for aesthetic purposes. 
+  - The game container comprises of the randomly generated dog image from an array created, a multiple choice answer section with four answer options generated, a submit button, a score container and an exit icon. 
+  
+![Game Page](./docs/game-container.png)
 
-  - The 
+  - The answer options are multiple choice options including the correct answer and three other options shuffled to ensure the correct answer placement is not predictable. 
+  - These are presented as radio button options for the user to select. 
+
+![Answer Options](./docs/radio-buttons.png)
+
+  - As with the Play the Game button in the Welcome page, the Submit button has a hover effect and pointer added to provide additional feedback to the user. 
+  - Where the user presses the Submit button without selecting an answer, an alert message pops up to ask the user to select an answer in order to proceed with the game. 
+
+![Alert](./docs/alert.png)
+
+   - Once an answer has been selected and submitted, the submit button changes to a "Next Question" button. Originally I had the next question button appear in addition to the Submit button but then decided to replace it to only show the Next Question button in order to further simplify navigation for the user. 
+  
+![Next Question](./docs/next-question.png)
+
+   - If the correct answer has been selected, the user is notified that the answer is correct, the correct scores number increases by one and the total questions asked increases by one. 
+   - A Font Awesome icon of a paw has been added to this message simply to create a bit more fun in the game. 
+   - The correct answer message is also styled in green to denote a positive answer. 
+
+![Correct Answer](./docs/correct-message.png)
+   
+   - If an incorrect answer has been selected, the user is notified that the answer is incorrect and what the correct answer was in order to facilitate learning the breed. The correct scores number remains unchanged and the total questions asked increases by one. 
+   - Similar to the correct answer, a Font Awesome icon of a broken heard has been added to this message and it is styled in dark red to denote a negative answer.  
+
+![Incorrect Answer](./docs/incorrect-message.png)
+
+  - Finally the Game page has an exit icon should the user wish to exit the game before it is finished. This icon takes the user back to the Welcome page of the site. 
+
+![Exit](./docs/exit.png)
+
+### Final Score Page
+
+  - The final score page of the site is designed to act as a certificate with a message generated for the user based on their inputted user name and the score achieved. 
+  - This is intended as a conclusion to the game but also a bit of fun for younger users. 
+  - This image has been taken from [[ImgFlip](https://imgflip.com/) and copyright remains with this source. 
+  - [Remove.bg](https://www.remove.bg/upload) was used to remove the background of the images for use in header and [Simple Image Resizer](https://www.simpleimageresizer.com/upload) to resize image. 
+
+![High Score](./docs/high-score.png)
+![Medium Score](./docs/medium-score.png)
+![Low Score](./docs/low-score.png)
+
+  - Included on the page are two buttons, one to play the game again directly and the second to return to the Welcome page of the site. 
+  - Consistent with the other site pages, the buttons have a hover effect and pointer added to provide additional feedback to the user. 
+
+![Final Page Buttons](./docs/buttons.png)
 
 ***
 ## Potential Future Features
 
  - Potential additional future features for the site include: 
-      - 
+      - Image selection: As the image is currently randomly generated from an array of dogs, there is the possibility that the same image is generated within a round of 10 questions. This is something I would like to work on removing in a future iteration of the game to further enhance the user experience. 
+      - Difficulty levels: There are a few options for potentially adding difficulty levels to the game:
+        1. Subjectively splitting dogs based on how common they are and a perception as to how difficult it may be to name their breed. This however would limit the number of options in each category and would mean that each image appears more frequently for the game type selected. 
+        2. Changing the game type to increase difficulty such as adding a free text box to guess the name or number of spaces with letter clues. A free text box version would require accepting varations of names for example a German Shepherd may also be referred to as an Alsatian. 
+      - For the current build of the game I ruled out implementing a timer as I felt it did not add to the game. I also considered and ruled out a leaderboard on the basis that a round is limited to ten questions and as a result there would not be sufficient variation in scores. However if difficulty levels were added and potentially different score variables for difficulty level it may be more justified to add a leaderboard. 
        
 ***
 ## Testing 

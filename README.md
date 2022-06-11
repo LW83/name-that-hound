@@ -89,26 +89,20 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
   
   - The homepage or welcome container was to welcome the user to the site, set out how to play the game and enable them to commence the game itself. 
 
- ![Balsamiq Homepage](./docs/home-desktop.png)
- ![Balsamiq Homepage](./docs/home-ipad.png)
- ![Balsamiq Homepage](./docs/home-iphone.png)
+ ![Balsamiq Homepage](./docs/wireframe-home.png)
 
  __Game Page__
   
   - The main gamepage sets out the generated dog image, the multiple choice answers and a submit button. The user also has the option to exit the game if they wish. 
   - Originally, I considered including a question line but in building the site I abandoned this as I felt it was intuitive and a waste of screen space to include a repeat 'What dog breed is this?' line. 
 
- ![Balsamiq Homepage](./docs/game-desktop.png)
- ![Balsamiq Homepage](./docs/game-ipad.png)
- ![Balsamiq Homepage](./docs/game-iphone.png)
+ ![Balsamiq Homepage](./docs/wireframe-game.png)
 
 __Final Page__
   
   - The final page sets out a certificate image to congratulate the user on their final score. This screen also enables the user to play the game again or return to the Welcome page. 
 
- ![Balsamiq Homepage](./docs/final-desktop.png)
- ![Balsamiq Homepage](./docs/final-ipad.png)
- ![Balsamiq Homepage](./docs/final-iphone.png)
+ ![Balsamiq Homepage](./docs/wireframe-final.png)
 
 ### Color Scheme
 - To decide on the color scheme for the site, I first selected the background-image. This image was selected from [Abode Images](https://stock.adobe.com/ie/).

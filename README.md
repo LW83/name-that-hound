@@ -239,6 +239,11 @@ __Favicon__
 
  - Specific breakpoints for each page were identified and managed through media queries. These were focused on adjusting the layout of boxes on the page, the size of margins and padding and also adjusting the font-size for smaller screen sizes. 
 
+ - Images of the various page views are included for: 
+          - [iPhone XR](./docs/iphone_screenshots/)
+          - [iPad Air](./docs/ipad_screenshots/)
+          - [Macbook](./docs/macbook_screenshots/)
+
 ### Browser Testing
   - The site was developed and tested using Google's Chrome browser. 
   - The site has also been tested on Safari and functions as intended. 
@@ -316,7 +321,9 @@ __Lighthouse Report__
     2. Generating random answers and pushing into an array:
           - Issue: Originally, I created a function which generated a value and was running the function three times to try to push the value generated each time into an array using the following code: 
                         Original code: 
+                        
                         let answerOptions = []
+                        
                         function generateAnswerOptions () {
                               let newNum = Math.floor(Math.random() * dogs.length);
                               let addDogs = dogs[newNum];
@@ -339,7 +346,7 @@ __Lighthouse Report__
     
     4. Lining up answers with radio buttons:
           - Issue: Initially, I struggled with generating the radio button options with the buttons showing up as number options, showing up in a straight line rather than stacked or showing up as lines of all options. 
-          - Solution: In order to stop all four options showing in one line, I needed to include the [i] after answerOptions. To stop the buttons appearing one after another in a line (see below) I add a <br> tag into the code. Finally I found that these answer options generated needed to be pushed into a new array (finalAnswerOptions) in order to be pushed as radio buttons to display correctly in the DOM. 
+          - Solution: In order to stop all four options showing in one line, I needed to include the [i] after answerOptions. To stop the buttons appearing one after another in a line I add a <br> tag into the code. Finally I found that these answer options generated needed to be pushed into a new array (finalAnswerOptions) in order to be pushed as radio buttons to display correctly in the DOM. 
           - Resource: General review of course notes and trial and error. 
 
     ![Radio Buttons Bug](./docs/radio-bug.png)
@@ -347,6 +354,7 @@ __Lighthouse Report__
     5. Generation of unique answer option: 
           - Issue: When first enabled the anwer options randomly generated based on the below code could generate an option that was the same as the correct answer or generate the same incorrect answer twice resulting in the same option appearing multiple times in the multiple choice options for a given image. 
                       Original code:  
+                      
                       function generateAnswerOptions () {
                       let newNum = Math.floor(Math.random() * dogs.length);
                       let addDogs = dogs[newNum];
@@ -357,6 +365,7 @@ __Lighthouse Report__
                               generateAnswerOptions ();
                               answerOptions.push(generateAnswerOptions());
                       }
+
           - Solution: After some research, I found a solution on Stack Overflow to create a number variable created from the dogs array, randomly sort this numbers variable, take the first number to generate the quiz image and associated dog name before taking the next three unique numbers to generate answer options. 
           - Resource: [Stack Overflow](https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100)
 

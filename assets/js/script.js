@@ -219,14 +219,14 @@ function generateGame() {
         shuffle(answerOptions); //call shuffle function to shuffle answers pushed to answer options array 
         
         /**
-         * Pushes shuffled answers into new array to be pushed as radio button options in DOM
+         * Pushes shuffled answers into new array to be pushed as radio button options in DOM. This code was based on code from https://www.sitepoint.com/simple-javascript-quiz/. 
          */
         let finalAnswerOptions = [];
         for (let i =0; i<answerOptions.length; i++){ 
             finalAnswerOptions.push(
             `<label>
                 <input id="radio" type="radio" name="possibleAnswers" value="${answerOptions[i]}">
-                ${answerOptions[i]} <br>
+                ${answerOptions[i]}<br>
             </label>`
             );
         }

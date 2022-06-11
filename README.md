@@ -2,9 +2,9 @@
 ***
 ## Overview 
 
-Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog breeds. As a lover of dogs, I wanted to create a simple but fun quiz to allow people to test their knowledge of different types of dogs.
+Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog breeds. As a dog lover myself, I wanted to create a fun quiz of 10 multiple choice questions that can be played and enjoyed by any age. Each round generates a fresh mix of images so the game can be played time and time again.
 
-![Responsiveness Demo]()
+![Responsiveness Demo](./docs/responsive-devices.png)
 
 ## Live Site
 
@@ -12,7 +12,8 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
 
 ## Repository 
 
-[https://github.com/LW83/](https://github.com/LW83/name-that-hound/)
+[GitHub Repository](https://github.com/LW83/name-that-hound/)
+
 ***
 ## Concept & Planning 
 
@@ -20,20 +21,62 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
 
 - __Target Audience__
 
-   - Individuals 
+   - Individuals passionate about the animals and dogs in particular and keen to test their knowledge of the various dog breeds.
+   - Children and adults looking to play a free fun online game.
+   - Parents/grandparents looking for an entertaining but educational game for their children/grandchildren to play or to play with them.
 
 - __User Stories__
 
-   - As a new user, 
+   - As a user, I want a free fun and eductional online game to play.
+   - As a user, I want to be able to understand how to play the game.
+   - As a user, I want to be able to easily navigate my way through the game.
+   - As a user, I want to be able to personalise my experience of the game.
+   - As a user, I want to be able to dictate the length of time I play.
+   - As a user, I want to get feedback on my answers and progress in the game. 
+   - As a user, I want to see my final score and have a conclusion to the game.
+   - As a user, I want to be able to play the game again easily if I choose.
+   - As a user, I want a different experience each time I play the game.
 
 - __Site aims__
  
   - The site aims to meet the above user requirements through the following: 
-    -  
+    -  Providing a free, online, education game to meet the target audience requirements.  
+    -  Providing clear game instructions at the outset.
+    -  Providing an easy and intuitive way to start, navigate and end or exit the game. 
+    -  Enabling the user to personalise their game experience by submitting their name. 
+    -  Enabling the user to play the game multiple times or to exit the game if they wish. 
+    -  Providing feedback to the user throughout the game on their score and their answers to facilitate a learning experience. 
+    -  Providing a game conclusion and overall final score and congratulatory message personalised to the user based on their score. 
+    -  Providing an easy mechanism for the user to replay the game as many times as they wish. 
+    -  Ensuring the user has a different experience of the game each time they play to ensure they wish to return to the game and to further the educational aspect of the game. 
 
 ### Wireframes
- Once I had decided on the theme for the site, I used Balsamiq to do some high level wireframes for the desktop version of the site: 
+ Once I had decided on the theme for the site, I used Balsamiq to do some high level wireframes for the desktop and mobile versions of the site:
 
+ __Welcome Page__
+  
+  - The homepage or welcome container was to welcome the user to the site, set out how to play the game and enable them to commence the game itself. 
+
+ ![Balsamiq Homepage](./docs/home-desktop.png)
+ ![Balsamiq Homepage](./docs/home-ipad.png)
+ ![Balsamiq Homepage](./docs/home-iphone.png)
+
+ __Game Page__
+  
+  - The main gamepage sets out the generated dog image, the multiple choice answers and a submit button. The user also has the option to exit the game if they wish. 
+  - Originally, I considered including a question line but in building the site I abandoned this as I felt it was intuitive and a waste of screen space to include a repeat 'What dog breed is this?' line. 
+
+ ![Balsamiq Homepage](./docs/game-desktop.png)
+ ![Balsamiq Homepage](./docs/game-ipad.png)
+ ![Balsamiq Homepage](./docs/game-iphone.png)
+
+__Final Page__
+  
+  - The final page sets out a certificate image to congratulate the user on their final score. This screen also enables the user to play the game again or return to the Welcome page. 
+
+ ![Balsamiq Homepage](./docs/final-desktop.png)
+ ![Balsamiq Homepage](./docs/final-ipad.png)
+ ![Balsamiq Homepage](./docs/final-iphone.png)
 
 ### Color Scheme
 - To decide on the color scheme for the site, I first selected the background-image. This image was selected from [Abode Images](https://.com/).

@@ -324,7 +324,6 @@ __Lighthouse Report__
 
     2. Generating random answers and pushing into an array:
           - Issue: Originally, I created a function which generated a value and was running the function three times to try to push the value generated each time into an array using the following code: 
-                        Original code: 
                         
                         let answerOptions = []
                         

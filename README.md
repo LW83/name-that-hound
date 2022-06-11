@@ -13,7 +13,39 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
 ## Repository 
 
 [GitHub Repository](https://github.com/LW83/name-that-hound/)
-
+***
+## Table of Contents:
+* [**Name That Hound**](#name-that-hound)
+  * [**Overview**](#overview)
+  * [**Concept & Plannung**](#concept-and-planning)
+    * [**Target Audience**](#target-audience)
+    * [**User Stories**](#user-stories)
+    * [**Site Aims**](#site-aims)
+    * [**Wireframes**](#wireframes)
+    * [**Color Scheme**](#color-scheme)
+    * [**Fonts**](#fonts)
+  * [**Existing Featurese**](#existing-features)
+    * [**Header**](#header)
+    * [**Footer**](#footer)
+    * [**Welcome Page**](#welcome-page)
+    * [**Game Page**](#game-page)
+    * [**Final Score Page**](#final-score-page)
+  * [**Feature Enhancements**](#feature-enhancements)
+  * [**Testing**](#testing)
+    * [**User Story Testing**](#user-story-testing)
+    * [**Features Testing**](#features-testing)
+    * [**Responsiveness Testing**](#responsiveness-testing)
+    * [**Browser Testing**](#browser-testing)
+    * [**Accessibility Testing**](#accessibility-testing)
+    * [**Code Validation Testing**](#code-validation-testing)
+    * [**Fixed Bugs**](#fixed-bugs)
+    * [**Unfixed Bugs**](#unfixed-bugs)
+  * [**Deployment**](#deployment)
+  * [**Credits**](#credits)
+    * [**Media**](#media)
+    * [**Languages Used**](#languages-used)
+    * [**Tools and Online Resources Utilised**](#tools-and-online-resources-utilised)
+    * [**People**](#people)
 ***
 ## Concept & Planning 
 
@@ -37,7 +69,7 @@ Welcome to Name That Hound, a just-for-fun quiz to test your knowledge of dog br
    - As a user, I want to be able to play the game again easily if I choose.
    - As a user, I want a different experience each time I play the game.
 
-- __Site aims__
+- __Site Aims__
  
   - The site aims to meet the above user requirements through the following: 
     -  Providing a free, online, education game to meet the target audience requirements.  
@@ -80,7 +112,7 @@ __Final Page__
 
 ### Color Scheme
 - To decide on the color scheme for the site, I first selected the background-image. This image was selected from [Abode Images](https://stock.adobe.com/ie/).
-- Once I had decided on the image, I used [Image Color Picket](https://imagecolorpicker.com/en) to identify different colors within the image to use as the basis for font, border and icon colors within the site. 
+- Once I had decided on the image, I used [Image Color Picker](https://imagecolorpicker.com/en) to identify different colors within the image to use as the basis for font, border and icon colors within the site. 
 - In order to ensure the colors selected had sufficient contrast to meet accessibility requirements, I validated the color palette using [Eight Shapes Contrast Grid](https://contrast-grid.eightshapes.com).
 
 ![Color Contrast](./docs/color-grid.png)
@@ -176,19 +208,21 @@ __Favicon__
 ![Final Page Buttons](./docs/buttons.png)
 
 ***
-## Potential Future Features
+## Feature Enhancements
 
  - Potential additional future features for the site include: 
       - Image selection: As the image is currently randomly generated from an array of dogs, there is the possibility that the same image is generated within a round of 10 questions. This is something I would like to work on removing in a future iteration of the game to further enhance the user experience. 
+
       - Difficulty levels: There are a few options for potentially adding difficulty levels to the game:
         1. Subjectively splitting dogs based on how common they are and a perception as to how difficult it may be to name their breed. This however would limit the number of options in each category and would mean that each image appears more frequently for the game type selected. 
         2. Changing the game type to increase difficulty such as adding a free text box to guess the name or number of spaces with letter clues. A free text box version would require accepting varations of names for example a German Shepherd may also be referred to as an Alsatian. 
+
       - For the current build of the game I ruled out implementing a timer as I felt it did not add to the game. I also considered and ruled out a leaderboard on the basis that a round is limited to ten questions and as a result there would not be sufficient variation in scores. However if difficulty levels were added and potentially different score variables for difficulty level it may be more justified to add a leaderboard. 
        
 ***
 ## Testing 
 
-### User Stories Testing
+### User Story Testing
 
 ### Features Testing
 
